@@ -1,0 +1,36 @@
+@import "~bootstrap/scss/bootstrap";
+
+// Tools
+// ==================
+@import 'tools/variables';
+@import 'tools/mixins';
+
+// Modules
+// ==================
+@import 'modules/typo';
+@import 'modules/btn';
+@import 'modules/cursor';
+@import 'modules/base';
+@import 'modules/loader';
+@import 'modules/lines';
+@import 'modules/header';
+@import 'modules/menu';
+@import 'modules/slick';
+@import 'modules/footer';
+@import 'modules/hero';
+
+// Pages
+// ==================
+@import 'pages/home';
+@import 'pages/sections';
+@import 'pages/contact';
+@import 'pages/works';
+@import 'pages/single-work';
+@import 'pages/about';
+
+// Parts
+// ==================
+@import 'parts/case-studies';
+@import 'parts/graphisme';
+@import 'parts/webdesign';
+

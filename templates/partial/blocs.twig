@@ -1,0 +1,5 @@
+{% set blocs = post.meta('blocs') %}
+{# {{ dump(post) }} #}
+{% for i, bloc in blocs %}
+    {% include('blocs/' ~ bloc.acf_fc_layout ~ '.twig')%}
+{% endfor %}

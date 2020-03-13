@@ -1,0 +1,150 @@
+{% if page_contact %}
+<div class="section-color footer-content">
+    <div class="gotop hoverable" data-cursor-text="top">
+        <i class="fas fa-chevron-circle-up"></i>
+    </div>
+    <div class="half-line before-lines"></div>
+    <div class="wrap-lines container">
+        <div class="row no-gutters">
+            <div class="col-3 liner"></div>
+            <div class="col-3 liner"></div>
+            <div class="col-3 liner"></div>
+            <div class="col-3 liner"></div>
+        </div>
+    </div>
+    <div class="half-line after-lines"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 pl-0">
+                <div class="footer-infos-left">
+                    <div class="footer-wrap-logo mb-5">
+                        <div class="footer-logo"></div>
+                        <span class="pl-2">{{site.title}}</span>
+                    </div>
+                    <div class="footer-adresse">
+                        <strong>Adresse</strong>
+                        <p>FRANCE<br>3400 Montpellier</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 pl-0">
+                <div class="footer-infos-center">
+                    {% if menu_footer %}
+                        {% for item in items %}
+                        <div class="footer-nav pb-3 {% if loop.first %}pt-1{% endif %}">
+                            <a class="hoverable" target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+                        </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-md-3 offset-md-3 pl-0">
+                <div class="footer-infos-right mt-5">
+                <p class="section-desc">Suivez-moi</p>
+                <div class="footer-social mb-5">
+                    <a class="hoverable" href="https://www.facebook.com/hldeveloppeurweb" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                    <a class="hoverable" href="https://www.linkedin.com/in/hugues-leger-developpeur-web" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="hoverable" href="https://www.instagram.com/onepale" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                </div>
+                    <a class="hoverable" href="mailto:contactme@hl-developerz.com">contactme@hl-developerz.com</a>   
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 pl-0">
+                <p class="copyright mb-0">© HL Developerz {{"now"|date('Y')}}. Tous droit réservés</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="section footer-contact">
+    <div class="half-line before-lines"></div>
+    <div class="wrap-lines container">
+        <div class="row no-gutters">
+            <div class="col-3 liner"></div>
+            <div class="col-3 liner"></div>
+            <div class="col-3 liner"></div>
+            <div class="col-3 liner"></div>
+        </div>
+    </div>
+    <div class="half-line after-lines"></div>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-9 pl-0">
+                <h3 class="footer-contact-title">Connectons-nous.</h3>
+                <p class="section-desc mt-4">Si vous avez des questions, contactez-moi <br>par e-mail.</p>
+            </div>
+            <div class="col-md-3 text-right pr-0">
+                <a class="btn btn-primary btn-lg hoverable" href="{{site.link}}/contact">Me contacter</a>  
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section-color footer-content">
+    <div class="gotop hoverable" data-cursor-text="top">
+        <i class="fas fa-chevron-circle-up"></i>
+    </div>
+    <div class="half-line before-lines"></div>
+    <div class="wrap-lines container">
+        <div class="row no-gutters">
+            <div class="col-3 liner"></div>
+            <div class="col-3 liner"></div>
+            <div class="col-3 liner"></div>
+            <div class="col-3 liner"></div>
+        </div>
+    </div>
+    <div class="half-line after-lines"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 pl-0">
+                <div class="footer-infos-left">
+                    <div class="footer-wrap-logo mb-5">
+                        <div class="footer-logo"></div>
+                        <span class="pl-2">{{site.title}}</span>
+                    </div>
+                    <div class="footer-adresse">
+                        <strong>Adresse</strong>
+                        <p>FRANCE<br>3400 Montpellier</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 pl-0">
+                <div class="footer-infos-center">
+                    {% if menu_footer %}
+                        {% for item in items %}
+                        <div class="footer-nav pb-3 {% if loop.first %}pt-1{% endif %}">
+                            <a class="hoverable" target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+                        </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-md-3 offset-md-3 pl-0">
+                <div class="footer-infos-right mt-5">
+                <p class="section-desc">Suivez-moi</p>
+                <div class="footer-social mb-5">
+                    <a class="hoverable" href="https://www.facebook.com/hldeveloppeurweb" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                    <a class="hoverable" href="https://www.linkedin.com/in/hugues-leger-developpeur-web" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="hoverable" href="https://www.instagram.com/onepale" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                </div>
+                    <a class="hoverable" href="mailto:contactme@hl-developerz.com">contactme@hl-developerz.com</a>   
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 pl-0">
+                <p class="copyright mb-0">© HL Developerz {{"now"|date('Y')}}. Tous droit réservés</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+
+
+</div><!-- app -->

@@ -1,0 +1,107 @@
+{% block html_head_container %}
+
+{% include 'html-header.twig' %}
+{% block head %}
+{% endblock %}
+</head>
+{% endblock %}
+
+{# <!-- <body class="{{body_class}}">
+		<a class="skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a>
+		<header class="header" >
+			{% block header %}
+				<div class="wrapper">
+					<h1 class="hdr-logo" role="banner">
+						<a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
+					</h1>
+					<nav id="nav-main" class="nav-main" role="navigation">
+						{% include "menu.twig" with {'items': menu.get_items} %}
+					</nav>
+				</div>
+			{% endblock %}
+		</header>
+
+		<section id="content" role="main" class="content-wrapper">
+			{% if title %}<h1>{{title}}</h1>{% endif %}
+			<div class="wrapper {{sidebar_class}}">
+				{% block content %}
+					Sorry, no content
+				{% endblock %}
+			</div>
+			{% if sidebar %}
+				<aside class="layout-sidebar">
+					{{sidebar}}
+				</aside>
+			{% endif %}
+		</section>
+
+		{% block footer %}
+			<footer id="footer">
+				{% include 'footer.twig' %}
+			</footer>
+			{{ function('wp_footer') }}
+		{% endblock %}
+	</body> --> #}
+
+
+<body class="scroll-content {{body_class}}">
+	<div class="circle-cursor circle-cursor--inner"></div>
+	<div class="circle-cursor circle-cursor--view"></div>
+	<div class="circle-cursor circle-cursor--outer"></div>
+	{% block loader %}
+	<div class="loader">
+		<div class="loader-content">
+			<div class="progress-circle">
+				<svg height="130" width="130">
+					<circle class="circle-line" cx="50%" cy="50%" r="62" fill="rgba(0,0,0,0)" stroke-width="2"
+						strokeDashoffset="400" stroke-dasharray="200" stroke="#292A2C"/>
+				</svg>
+				<div class="loader-circle">
+					<div class="loader-logo"></div>
+				</div>
+			</div>
+			<h1 class="loader-title text-center mb-0">HL Developerz</h1>
+		</div>
+	</div>
+	{% endblock %}
+	<div class="app" id="app">
+		<header class="header">
+		{% block header %}
+			<div class="content-header">
+				<a class="logo hoverable" href="{{site.url}}" rel="home"><img src="{{custom_logo_url}}" />
+					<span class="title-site">{{site.name}}</span>
+				</a>
+				<div class="btn-main hoverable">
+					<span class="btn-fill"></span>
+				</div>
+			</div>
+			<nav id="nav-main" class="main" role="navigation">
+			<div class="half-line before-lines"></div>
+			<div class="wrap-lines container">
+				<div class="row no-gutters">
+					<div class="col-3 liner"></div>
+					<div class="col-3 liner"></div>
+					<div class="col-3 liner"></div>
+					<div class="col-3 liner"></div>
+				</div>
+			</div>
+			<div class="half-line after-lines"></div>
+				<div class="container px-0">
+					{% include "menu.twig" with {'items': menu.get_items} %}
+				</div>
+			</nav>
+		{% endblock %}
+		</header>
+	{% block content %}
+	{% endblock %}
+	{% block footer %}
+	<footer id="footer" class="footer">
+		{% include 'footer.twig'with {'items': menu_footer.get_items} %}
+	</footer>
+	{{ function('wp_footer') }}
+	{% endblock %}
+	{% block javascripts %}
+	{% endblock %}
+</body>
+
+</html>

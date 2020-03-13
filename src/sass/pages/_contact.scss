@@ -1,0 +1,156 @@
+// contact
+// ==================
+.hero-contact {
+    margin-bottom: -70px;
+    z-index: 1;
+    .hero-title h1 {
+        transition: 0.3s;
+    }
+}
+
+.contact-form {
+    position: relative;
+    background-color: #fff;
+    .form-content {
+        z-index: 1;
+        background-color: #fff;
+        width: 100%;
+        padding: 4rem 2rem;
+        position: relative;
+        .info-contact {
+            h2 {
+                font-family: $font_renogare;
+                font-size: 2.3rem;
+            }
+        }
+        .contact-me {
+            padding: 1.2rem;
+            box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.2);
+            &.no-shadow {
+                box-shadow: none;
+            }
+        }
+        .info-block {
+            font-size: 0.8rem;
+            .icon {
+              background-size: contain;
+              height: 30px;
+              background-repeat: no-repeat;
+              background-position: left;
+                &.icon-map {
+                    background-image: url('../images/map.svg');
+                }
+                &.icon-social {
+                    background-image: url('../images/social.svg');
+                }
+                &.icon-email {
+                    background-image: url('../images/email.svg');
+                }  
+
+            }
+            .content-block {
+                h4 {
+                    font-size: 1rem;
+                    font-weight: 700;
+                }
+            } 
+        }
+    }
+} 
+
+// formulaire
+// ==================
+div.wpforms-container-full.wrap-form-contact .wpforms-form {
+    .input-wrap {
+        padding-bottom: 5px;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #d9d9d9;
+        position: relative;
+        .wpforms-field-label {
+            top: 15px;
+            position: absolute;
+            left: 0;
+            transition: all 0.3s ease-in-out;
+            color: #ccc;
+            font-weight: 500;
+            &.active {
+                top: 2px;
+                transition: all 0.3s;
+                color: $color_primary;
+            }
+            span {
+                display: none;
+            }
+          }
+          .wpforms-error {
+            color: #e27171;
+          }
+          input, textarea {
+            border: none;
+            width: 100%;
+            padding: 10px 5px 0 0;
+            font-size: 14px;
+          } 
+          textarea {
+              resize: none;
+              padding-top: 15px;
+          }
+          input:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0px 1000px white inset;
+            box-shadow: 0 0 0px 1000px white inset;
+        }    
+    }
+    .btn-submit {
+        border-radius: 4rem;
+        padding: 0.6rem 1.5rem;
+        color: #fff;
+        background-color: $color_primary;
+        border: 1px solid $color_primary;
+        cursor: none !important;
+    }
+}
+
+.wrap-form-contact .wpforms-form .input-wrap.active:before {
+    width: 100%;
+}   
+.wrap-form-contact .wpforms-form .input-wrap:before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    -moz-transition: all .4s;
+    transition: all .4s;
+    background: $color_primary;
+}
+
+// message confirm
+.wpforms-confirmation-container-full, div[submit-success] > .wpforms-confirmation-container-full:not(.wpforms-redirection-message) {
+    background: #2ecc71;
+    border: none;
+    margin: 0;
+    // position: fixed;
+    // top: 0;
+    // width: 100%;
+    // left: 0;
+    padding: 1.5rem;
+    color: #fff;
+    transition: transform 0.3s ease-in-out;
+}
+.wpforms-confirmation-container-full.is-hide {
+    transform: translateY(-100px);
+}
+
+.send-email{
+    background-image: url('../images/send-email.svg');
+    background-size: cover;
+    width: 250px;
+    height: 250px;
+    margin: auto;
+    background-position: top;
+    opacity: 0.5;
+}

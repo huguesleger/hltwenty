@@ -1,0 +1,47 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	{# <h2>{{ foo }}</h2>
+	<p>{{ qux }}</p> #}
+	{# {% for post in posts %}
+		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+	{% endfor %}
+	
+	{% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %} #}
+
+<div class="home-slide home-slide--intro is-active">
+  	<div class="desktop">
+  		<div class="wrap-elements">
+  			<span class="element element-1 c"></span>
+  			<span class="element element-3 c-line"></span>
+  			<span class="element element-4 c-line-blue"></span>
+  			<span class="element element-5 t"></span>
+  			<span class="element element-6 r"></span>
+  			<span class="element element-7 r-blue"></span>
+  			<span class="element element-8 r-line"></span>
+  			<span class="element element-9 l"></span>
+  			<span class="element element-10 l-large-blue"></span>
+  			<span class="element element-11 more"></span>
+  			<span class="element element-12 x"></span>
+  		</div>
+  		<div class="container">
+  			<div class="row justify-content-center align-items-center">
+  				<div class="col-md-12">
+  					<h1 class="title-intro">creative web<span>designer</span></h1>
+  					<h2 class="txt--p2">
+  						<span class="txt-top">I design and build</span>
+  						<span>websites <span class="and">&</span></span>
+  						<div class="words words1">
+  							<div class="word-1">ui design</div>
+  							<div class="word-2">graphic design</div>
+  							<div class="word-3">illustations</div>
+  							<div class="word-4">applications</div>
+  						</div>
+  					</h2>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+</div>
+
+{% endblock %}

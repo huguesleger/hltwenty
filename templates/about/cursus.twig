@@ -1,0 +1,46 @@
+<section class="section cursus-about">
+    <div class="half-line before-lines"></div>
+    <div class="wrap-lines container">
+        <div class="row no-gutters">
+            <div class="col-3 liner"></div>
+            <div class="col-3 liner"></div>
+            <div class="col-3 liner"></div>
+            <div class="col-3 liner"></div>
+        </div>
+    </div>
+    <div class="half-line after-lines"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 p-0">
+                <h3 class="cursus-title section-title">{{ bloc.titre }}</h3>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row blocs-cursus">
+                {% for i, parcour in bloc.parcours %}
+                    <div class="col-md-3 pl-0">
+                        <div class="bloc-cursus">
+                            <div class="years">
+                            {% if i == 2 %}
+                            <span class="start-year">2004</span>
+                            {% endif %}
+                                <p>{{ parcour.annees }}</p>
+                            </div>
+                            {% if parcour.duree == true  %}
+                            <div class="times">
+                                <p>Durée : {{ parcour.duree }}</p>
+                            </div>
+                            {% endif %}
+                            <div class="formation">
+                            <p>{{ parcour.formation }}</p>
+                            </div>
+                            <div class="school">
+                                <p>{{ parcour.ecole }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+        </div>
+    </div>
+</section>

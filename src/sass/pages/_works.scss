@@ -1,0 +1,98 @@
+// Works
+// ==================
+.page-case-studies {
+    .hero-title {
+        text-align: left;
+        top: 28%;
+        left: 10%;
+        right: auto;
+        color: $color_txt;
+    }
+}
+.works {
+    width: 100%;
+    .work-item {
+        position: relative;
+        overflow: hidden;
+        .work-color {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            transition: transform 400ms cubic-bezier(0.91, 0.01, 0.67, 1);
+            background: #f1f1f1;
+            transform: translateY(100%);
+            z-index: 1;
+        }
+        .work-desc {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+            padding: 15px;
+            transform: translateY(100%);
+            opacity: 0;
+            transition: transform 600ms cubic-bezier(0.91, 0.01, 0.67, 1), opacity 350ms ease-in-out;
+            h3 {
+                font-family: $font_renogare;
+                margin-bottom: 0;
+            }
+            span {
+                //max-width: 250px;
+                max-width: 185px;
+                display: block;
+                font-size: 0.9rem;
+            }
+        }
+    }
+    .grid-item:hover .work-color {
+        transform: translateY(0);
+    }
+    .grid-item .work-item img {
+        transition: transform 200ms ease-in-out;
+    }
+    .grid-item:hover .work-item img {
+        transform: scale(1.1);
+    }
+    .grid-item:hover .work-desc {
+        transform: translateY(0);
+        color: $color_txt;
+        opacity: 1;
+    } 
+}
+// Works filter
+// ==================
+.btn-filter {
+    position: relative;
+    transition: 0.3s ease-in-out;
+    padding-bottom: 10px;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 15px;
+    overflow: hidden;
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: $color_primary;
+        transform: translateX(-100%);
+        transition: transform 0.1s;
+    }
+    &.active {
+        color: $color_primary;
+        &::before {
+            transform: translateX(0);
+            -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 0.3s;
+        }
+    }
+    &:hover {
+        color: $color_primary;
+    }
+}

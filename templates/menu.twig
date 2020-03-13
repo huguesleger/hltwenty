@@ -1,0 +1,9 @@
+{% if menu %}
+	<ul class="main-items list-unstyled">
+	{% for item in items %}
+		<li class="main-item {% if item.current %}item-active{% endif %}">
+			<a class="item hoverable" data-cursor-text="view" target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+		</li>
+	{% endfor %}
+	</ul>
+{% endif %}

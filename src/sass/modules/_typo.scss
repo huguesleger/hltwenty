@@ -1,0 +1,44 @@
+@include font-face('Renogare', '../fonts/Renogare-Regular', 700, normal, otf);
+
+// Section
+// ==================
+.h3, .section-title {
+    font-size: 1.5rem;
+}
+.section-title {
+    position: relative;
+    margin-bottom: 1rem;
+    &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        height: 4px;
+        width: 30px;
+        background-color: $color_txt;
+        margin-top: 0.5rem;
+    }
+    &.title-white::after {
+        content: '';
+        position: absolute;
+        display: block;
+        height: 4px;
+        width: 30px;
+        background-color: #fff;
+        margin-top: 0.5rem;
+    }
+}
+.section-desc {
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 1;
+    font-family: $font_renogare;
+}
+.h4 {
+    font-size: 1.2rem;
+}
+
+// Regles
+// ================
+h1, .h1 {
+    font-family: $font_renogare;
+}

@@ -1,0 +1,48 @@
+<section class="section-dark skill-about">
+    <div class="half-line before-lines"></div>
+    <div class="wrap-lines container">
+        <div class="row no-gutters">
+            <div class="col-3 liner"></div>
+            <div class="col-3 liner"></div>
+            <div class="col-3 liner"></div>
+            <div class="col-3 liner"></div>
+        </div>
+    </div>
+    <div class="half-line after-lines"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 p-0">
+                <h3 class="section-title title-white mb-5">{{ bloc.titre }}</h3>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="wrap-skill">
+            {# {% for i, type in bloc.types %}
+                <div class="box-skill col-md-3 p-0">
+                    <img class="img-fluid" src="{{ type.icon }}"></img>
+                    <h4 class="h4 mb-3">{{ type.nom }}</h4>
+                </div>
+            {% endfor %} #}
+
+        {% for i, type in bloc.types %}
+            {% if loop.index0 is divisible by(4) %}
+                <div class="row row-skill">
+            {% endif %}
+                    <div class="box-skill">
+                        <img class="img-fluid" src="{{ type.icon }}"></img>
+                        <p class="mb-2">{{ type.nom }}</p>
+                        {% if type.pratique == true  %}
+                        <span class="badge badge-primary">{{ type.pratique }} %</span>
+                        <div class="overlay-skill" style="background-image: url('{{ type.icon }}')"></div>
+                        {% endif %}
+                    </div>
+            {% if loop.index is divisible by(4) or loop.last %}
+                </div>
+            {% endif %}
+        {% endfor %}
+
+
+        </div>
+    </div>
+</section>

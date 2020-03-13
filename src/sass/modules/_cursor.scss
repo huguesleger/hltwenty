@@ -1,0 +1,35 @@
+// Cursor
+// ==================
+
+  .circle-cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    border-radius: 50%;
+    z-index: 1100;
+    mix-blend-mode: difference;
+    visibility: hidden;
+    &--outer {
+      width: 35px;
+      height: 35px;
+      border: 1px solid #fff;
+      opacity: 0.3;
+    }
+    &--inner {
+      width: 10px;
+      height: 10px;
+      left: 3px;
+      top: 3px;
+      background: #fff;
+    }
+    &--view {
+      left: 28px;
+      top: 40px;
+      color: #fff;
+      opacity: 0;
+      font-size: 1.2rem;
+      font-family: $font_renogare;
+      text-transform: uppercase;
+    }
+  }

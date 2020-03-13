@@ -1,0 +1,89 @@
+// webdesign
+// ==================
+.section-webdesign {
+    position: relative;
+    min-height: 800px;
+}
+
+.webdesign-icons {
+    display: flex;
+    justify-content: space-between;
+    .wrap-icon {
+        margin: 0 15px;
+        &:first-child {
+            margin-left: 0;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    .icon-item  {
+        width: 90px;
+        height: 90px;
+        // border: 2px solid $color_primary;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: 0 auto;
+        border-radius: 10px;
+        background-color: $bg_grey;
+        -webkit-box-shadow: 0px 0px 20px -2px rgba(0,0,0,0.54);
+        -moz-box-shadow: 0px 0px 20px -2px rgba(0,0,0,0.54);
+        box-shadow: 0px 0px 20px -2px rgba(0,0,0,0.54);
+        &.icon-webdesign {
+            background-image: url('../images/webdesign-white.png');
+            background-size: 42%;
+        }
+        &.icon-integration {
+            background-image: url('../images/integration-white.png');
+            background-size: 55%;
+        }
+        &.icon-responsive {
+            background-image: url('../images/responsive-white.png');
+            background-size: 55%;
+        }
+        &.icon-creative {
+            background-image: url('../images/creative-white.png');
+            background-size: 30%;
+        }
+    }
+    .icon-desc {
+        text-align: center;
+        color: #fff;
+        font-size: 0.8rem;
+        padding-top: 0.5rem;
+    }
+}
+
+.img-webdesign {
+    margin-top: -50px;
+}
+.webdesign-template {
+    position: absolute;
+    top: 15%;
+    padding-top: 100px;
+    overflow: hidden;
+    left: 58.8%;
+    .wrap-template {
+        position: relative;
+        background-image: url('../images/device-2.png');
+        background-size: contain;
+        width: 950px;
+        background-repeat: no-repeat;
+        &::before {
+            content: "";
+            display: block;
+            padding-top: 56%;
+        }
+        .img-device {
+            position: absolute;
+            position: absolute;
+            width: 66%;
+            top: 9.5%;
+            left: 16.5%;
+        }
+    }
+}
+
+.btn-webdesign {
+    margin-top: 4rem;
+}

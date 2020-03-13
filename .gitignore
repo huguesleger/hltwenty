@@ -1,0 +1,16 @@
+vendor
+wp-content
+composer.lock
+node_modules
+package-lock.json
+package.json
+phpunit.xml
+yarn.lock
+public
+bin
+.vscode
+tests
+.travis.yml
+webpack.config.js
+composer.json
+composer.lock

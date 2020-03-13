@@ -1,0 +1,171 @@
+// About
+// ==================
+
+// hero-page
+// ==================
+.hero-page + .presentation-about {
+    padding: 6rem 0;
+} 
+
+// presentation
+// ==================
+.presentation-about {
+    padding: 8rem 0 6rem 0;
+    .detail-presentation {
+        font-family: $font_renogare;
+        h2, h3, h4, h5 {
+            font-size: 2.2rem;
+            line-height: 1.5;
+        }
+        strong {
+            color: $color_primary;
+        }
+    }
+}
+
+// number
+// ==================
+.number-about {
+    padding: 6rem 0;
+    color: #fff;
+    // text-align: center;
+    .number {
+        font-family: $font_renogare;
+        font-size: 3rem;
+        p {
+            // border-bottom: 2px solid;
+            margin-bottom: 0;
+        }
+        &::after {
+            content:'';
+            display: block;
+            // margin: 0 auto;
+            width: 30px;
+            height: 2px;
+            background-color: #fff;
+        }
+    }
+    .number-title {
+        font-size: 2rem;
+        font-weight: 500;
+        p {
+            margin: 0.5rem 0;
+        }
+    }
+    .number-desc {
+        font-weight: 100;
+    }
+}
+
+// cursus
+// ==================
+.cursus-about {
+    padding: 6rem 0;
+    .cursus-title {
+        margin-bottom: 8rem;
+    }
+    .blocs-cursus {
+        counter-reset: cursusCounter;
+        .bloc-cursus {
+            position: relative;
+            &::before {
+                content: counter(cursusCounter,decimal-leading-zero);
+                counter-increment: cursusCounter;
+                position: absolute;
+                top: 0;
+                // left: -25px;
+                // width: 50px;
+                font-family: $font_renogare;
+                // font-size: 5rem;
+                // transform: rotate(-90deg);
+                // line-height: 0;
+                // color: $grey_ultralight;
+                // z-index: -1;
+
+                left: 0;
+                width: 180px;
+                font-size: 8rem;
+                transform: rotate(-90deg) translate(110px, -38px);
+                // color: #f7f7f7;
+                color:  #f3f3f3;
+            }
+            .start-year {
+                position: absolute;
+                top: -10px;
+            }
+            .years{
+                position: relative;
+                p {
+                    font-size: 3rem;
+                    font-family: $font_renogare;
+                }
+            }
+            .school p {
+                font-size: 1.5rem;
+                font-weight: 900;
+                color: $color_primary;
+            }
+        }
+    }
+}
+
+// services
+// ==================
+.services-about {
+    position: relative;
+    padding: 6rem 0;
+}
+
+// skills
+// ==================
+.skill-about {
+    position: relative;
+    padding: 6rem 0;
+    color: #fff;
+    .wrap-skill {
+        // display: grid;
+        // grid-template-columns: 25% 25% 25% 25%;
+        .row-skill {
+            .box-skill {
+                // border: 1px solid #dcdcdc;
+                // border-top: 1px solid #dcdcdc;
+                // border-right: 1px solid #dcdcdc;
+                text-align: center;
+                 width: 25%;
+                 height: 200px;
+                 display: flex;
+                 justify-content: center;
+                 align-items: center;
+                 flex-direction: column;
+                // border-right: 0;
+                // &:first-child {
+                //     border-left: 1px solid #dcdcdc;
+                // }
+                img {
+                    filter: invert(1);
+                }
+            }
+            // &:last-child {
+            //     border-bottom: 1px solid #dcdcdc;
+            // }
+            &::after {
+                content:'';
+                display: block;
+                width: calc(100% - 2px);
+                height: 1px;
+                background-color: #444444;
+            }
+            // &:first-child::before {
+            //     content:'';
+            //     display: block;
+            //     width: calc(100% - 2px);
+            //     height: 1px;
+            //     background-color: #444444;
+            // }
+            &:last-child::after {
+                display: none;
+            }
+        }
+    }
+
+}

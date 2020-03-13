@@ -1,0 +1,23 @@
+{# <article class="tease tease-{{post.post_type}}" id="tease-{{post.ID}}">
+	{% block content %}
+		<h2 class="h2"><a href="{{post.link}}">{{post.title}}</a></h2>
+		<p>{{post.preview}}</p>
+		{% if post.get_thumbnail %}
+			<img src="{{post.thumbnail.src}}" />
+		{% endif %}
+	{% endblock %}
+</article> #}
+
+{# {{ dump(post) }} #}
+	<a href="{{post.link}}" class="col-4 grid-item hoverable {{ post.terms('case-study-type')|join(' ') }}">
+		<div class="work-item">
+		<div class="work-color"></div>
+			{% if post.get_thumbnail %}
+				<img class="img-fluid" src="{{post.thumbnail.src}}" />
+			{% endif %}
+		<div class="work-desc">
+		<h3>{{post.title}}</h3>
+		<span>{{ post.post_excerpt }}</span>
+		</div>	
+		</div>
+	</a>

@@ -1,0 +1,19 @@
+{% set intros = post.meta('intros') %}
+{% for intro in intros %}
+<div class="container">
+    <div class="row justify-content-center align-items-center">
+            <div class="col-md-12">
+                <h1 class="title-intro">{{ intro.titre }}</h1>
+                <h2 class="txt--p2">
+                    <span class="txt-top">{{ intro.baseline }}</span>
+                    <span>{{ intro.baseline_2 }} <span class="and">&</span></span>
+                    <div class="words words1">
+                        {% for i in 1..4 %}
+                            <div class="word-{{i}}">{{ intro['texte_animation_' ~ i]}}</div>
+                        {% endfor %}
+                    </div>
+                </h2>
+            </div>
+    </div>
+</div>
+{% endfor %}

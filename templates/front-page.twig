@@ -1,0 +1,53 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<div class="lines-intro">
+	<div class="half-line before-lines">
+		<div class="block-line"></div>
+	</div>
+	<div class="wrap-lines container">
+		<div class="row no-gutters">
+			<div class="col-3 liner">
+				<div class="block-line"></div>
+			</div>
+			<div class="col-3 liner">
+				<div class="block-line"></div>
+			</div>
+			<div class="col-3 liner">
+				<div class="block-line"></div>
+			</div>
+			<div class="col-3 liner">
+				<div class="block-line"></div>
+			</div>
+		</div>
+	</div>
+	<div class="half-line after-lines">
+		<div class="block-line"></div>
+	</div>
+</div>
+
+<div class="intro">
+	<div class="home-slide home-slide--intro is-active">
+		<div class="desktop">
+			<div class="wrap-elements">
+				<span class="element element-1 c"></span>
+				<span class="element element-3 c-line"></span>
+				<span class="element element-4 c-line-blue"></span>
+				<span class="element element-5 t"></span>
+				<span class="element element-6 r"></span>
+				<span class="element element-7 r-blue"></span>
+				<span class="element element-8 r-line"></span>
+				<span class="element element-9 l"></span>
+				<span class="element element-10 l-large-blue"></span>
+				<span class="element element-11 more"></span>
+				<span class="element element-12 x"></span>
+			</div>
+			{# {% include 'partial/blocs.twig'%} #}
+			{% include 'homepage/homepage-intro.twig'%}
+		</div>
+	</div>
+</div>
+<div class="sections">
+	{% include 'partial/blocs.twig'%}
+</div>
+{% endblock %}

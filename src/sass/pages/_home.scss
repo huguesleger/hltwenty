@@ -1,0 +1,183 @@
+// Home
+// ==================
+.intro {
+    background-color: $bg_grey;
+}
+.home-slide--intro {
+    height: 100vh;
+    position: relative;
+    -ms-touch-action: none;
+    touch-action: none;
+    .row {
+        text-align: center;
+        height: 100vh;
+        h2 {
+        opacity: 0;
+        color: #fff;
+        position: relative;
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin-bottom: 0;
+        }
+    }
+    .title-intro {
+        font-family: $font_renogare;
+        font-size: 6.2rem;
+        text-transform: capitalize;
+        position: absolute;
+        width: 100%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        margin-bottom: 0;
+        opacity: 0;
+        span {
+            display: block;
+        }
+    }
+    .txt-top {
+        display: block;
+        font-weight: 200;
+    }
+    .and {
+        color: $color_primary;
+    }
+    .words {
+        position: relative;
+        vertical-align: bottom;
+         display: inline-block;
+        white-space: pre;
+        div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+            &:first-child {
+            display: block;
+            }
+        }
+    }
+}
+
+.wrap-elements {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 1140px;
+    height: 500px;
+    transform: translate(-50%, -50%);
+    .element {
+        position: absolute;
+    }
+    .c {
+        width: 20px;
+        height: 20px;
+        background: $color_txt;
+        top: 130px;
+        left: 160px;
+    }
+    .c-line {
+        width: 20px;
+        height: 20px;
+        border: 2px solid $color_txt;
+        background: transparent;
+        top: 200px;
+        right: 187px;
+        }
+        .c-line-blue {
+            width: 20px;
+            height: 20px;
+            border: 2px solid $color_primary;
+            background: transparent;
+            top: 295px;
+            left: 95px; 
+        }
+    .t {
+        width: 0;
+        height: 0;
+        border-left: 18px solid transparent;
+        border-right: 18px solid transparent;
+        border-bottom: 30px solid $color_txt;
+        top: 50px;
+        right: 15px; 
+    }
+    .t-blue {
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 16px solid $color_primary;
+        bottom: 120px;
+        left: 15px; 
+    }
+    .r {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: $color_txt;
+        bottom: 120px;
+        right: 100px;
+    }
+    .r-blue {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: $color_primary;
+        top: 90px;
+        left: 390px;
+    }   
+    .r-line {
+        width: 20px;
+        height: 20px;
+        border: 2px solid $color_txt;
+        bottom: 146px;
+        border-radius: 50%;
+        left: 230px;
+    }
+    .l {
+        width: 20px;
+        height: 2px;
+        background: $color_txt;
+        top: 30px;
+        left: 255px;
+    }
+    .l-large-blue {
+        width: 60px;
+        height: 2px;
+        bottom: 15px;
+        right: 210px;
+        background: $color_primary;
+        }
+    .more {
+        width: 20px;
+        height: 2px;
+        background: $color_txt;
+        bottom: 55px;
+        right: 18px;
+        &::after {
+            content:'';
+            position: absolute;
+            transform: rotate(90deg);
+            width: 20px;
+            height: 2px;
+            background: $color_txt;
+        }
+    }
+    .x{
+        width: 20px;
+        height: 2px;
+        background: $color_txt;
+        bottom: 20px;
+        left: 65px;
+        transform: rotate(45deg);
+        &::after {
+            content:'';
+            position: absolute;
+            width: 20px;
+            height: 2px;
+            background: $color_txt;
+            transform: rotate(-90deg); 
+        }
+    }
+}

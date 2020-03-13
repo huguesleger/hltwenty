@@ -1,0 +1,64 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+{% if post.thumbnail.src is defined %}
+<div class="hero-page">
+	<div class="hero-content" data-position="{{ post.position }}"
+		style="background-image: url('{{ post.thumbnail.src }}')"></div>
+	<div class="hero-title">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1 class="rellax" data-rellax-speed="3">{{post.title}}</h1>
+				</div>
+        	</div>
+		</div>
+	</div>
+</div>
+{% endif %}
+
+{% set blocs = post.meta('blocs') %}
+
+{% for i, bloc in blocs %}
+    {% include('about/' ~ bloc.acf_fc_layout ~ '.twig')%}
+{% endfor %}
+
+{% endblock %}
+
+{# {% block javascripts %}
+<script>
+ jQuery(function($) {
+$(document).ready(function(){
+    var presentation = $('.presentation-about').outerHeight() / 2;
+
+        var number = $('.number-about').offset().top;
+        var offset = number - presentation;
+    
+        $(window).on('scroll', function(){
+            if($(window).scrollTop() >= offset){
+            $('.number p').each(function() {
+                var $this = $(this),
+                    countTo = $this.attr('data-number');
+                $({ countNum: $this.text()}).animate({
+                countNum: countTo
+                },
+                {
+                duration: 4000,
+                easing:'linear',
+                step: function() {
+                    $this.text(Math.floor(this.countNum));
+                },
+                complete: function() {
+                    $this.text(this.countNum);
+                }
+                });
+            });
+            }
+        });
+});
+
+ });
+
+</script>
+{% endblock %}	 #}

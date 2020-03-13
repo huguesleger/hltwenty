@@ -1,0 +1,56 @@
+// Base
+// ==================
+body {
+    background-color: #fff;
+    touch-action: none;
+    cursor: none;
+    color: $color_txt;
+    font-family: $font_montserrat;
+    // min-height: 1500px;
+}
+
+a {
+    cursor: none;
+    color: inherit;
+    &:hover, &:focus {
+        text-decoration: none;
+    }
+}
+
+button {
+    border: none;
+    cursor: none !important;
+    background: none;
+    &:focus {
+        outline: none;
+    }
+}
+
+.app {
+    position: fixed;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+}
+
+
+.scroll-content::-webkit-scrollbar-track
+{
+    background-color: #F5F5F5;
+}
+
+.scroll-content::-webkit-scrollbar
+{
+	width: 6px;
+    background-color: #F5F5F5;
+}
+
+.scroll-content::-webkit-scrollbar-thumb
+{
+    background-color: #666565;
+}
+
+.scroll-content::-scrollbar-thumb
+{
+    background-color: #666565;
+}

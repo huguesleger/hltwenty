@@ -1,0 +1,53 @@
+// footer
+// ==================
+.footer-contact {
+    padding: 6rem 0;
+}
+.footer-contact-title {
+    font-weight: 200;
+    font-size: 1.5rem;
+}
+.footer-content {
+    color: #fff;
+    padding: 6rem 0;
+    &::before {
+        content:'';
+        position: absolute;
+        top: -1px;
+        left: 50%;
+        background-image: url('../images/curve.svg');
+        background-repeat: no-repeat;
+        width: 100px;
+        height: 60px;
+        transform: translateX(-48%);
+        z-index: 1;
+    }
+    .gotop {
+        color:$color_primary;
+        position: absolute;
+        top: -2px;
+        left: 50%;
+        z-index: 2;
+        font-size: 2rem;
+        transform: translateX(-50%);
+    }
+}
+.footer-wrap-logo {
+    display: flex;
+    align-items: center;
+}
+.footer-logo {
+    width: 30px;
+    height: 30px;
+    background: url('../images/logo.svg') center center no-repeat;
+    background-size: contain;
+}
+.footer-adresse {
+    margin-bottom: 6rem;
+}
+.copyright {
+    font-size: 0.7rem;
+}
+.footer-social a:not(:last-child) {
+    margin-right: 0.6rem;
+}

@@ -1,0 +1,30 @@
+<section class="section services-about">
+    <div class="half-line before-lines"></div>
+    <div class="wrap-lines container">
+        <div class="row no-gutters">
+            <div class="col-3 liner"></div>
+            <div class="col-3 liner"></div>
+            <div class="col-3 liner"></div>
+            <div class="col-3 liner"></div>
+        </div>
+    </div>
+    <div class="half-line after-lines"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 p-0">
+                <h3 class="section-title mb-5">{{ bloc.titre }}</h3>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            {% for i, type in bloc.types %}
+                <div class="col-md-3 pl-0">
+                    <i class="{{ type.icon }}"></i>
+                    <h4 class="h4 mb-3">{{ type.titre }}</h4>
+                    <p>{{ type.description }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

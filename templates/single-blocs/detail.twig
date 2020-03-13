@@ -1,0 +1,62 @@
+<div class="single section detail-case-study">
+    <div class="half-line before-lines"></div>
+    <div class="wrap-lines container">
+        <div class="row no-gutters">
+            <div class="col-3 liner"></div>
+            <div class="col-3 liner"></div>
+            <div class="col-3 liner"></div>
+            <div class="col-3 liner"></div>
+        </div>
+    </div>
+    <div class="half-line after-lines"></div>
+    <div class="back-studies">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 p-0">
+                    <div class="case-studies-link"><span></span><a class="hoverable" data-cursor-text="back" href="{{ site.url }}/case-studies">Case Studies</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 pl-0">
+                <div class="detail-desc">
+                    <h2>{{ bloc.description }}</h2>
+                </div>
+            </div>
+            <div class="col-md-3 pl-0">
+                <div class="detail-client">
+                    <div class="detail-title mb-4">
+                        <span class="detail-icon mr-2"><i class="fas fa-user"></i></span>
+                        <h3 class="mb-0">Client</h3>
+                    </div>
+                    <p>{{ post.title }}</p>
+                    <a class="btn btn-round btn-primary hoverable mt-3" href="{{ bloc.site_web }}" target="_blank" rel="noopener noreferrer">Voir le site</a> 
+                </div>
+            </div>
+            <div class="col-md-3 pl-0">
+                <div class="detail-objectif">
+                    <div class="detail-title mb-4">
+                        <span class="detail-icon mr-2"><i class="fas fa-bullseye"></i></span> 
+                        <h3 class="mb-0">Objectif</h3>
+                    </div>
+                    <p>{{ bloc.objectif }}</p>
+                </div>
+            </div>
+            <div class="col-md-3 offset-md-3 pl-0">
+            <div class="detail-intervention">
+                <div class="detail-title mb-4">
+                    <span class="detail-icon mr-2"><i class="fab fa-buffer"></i></span> 
+                    <h3 class="mb-0">Intervention</h3>
+                </div>
+                <ul class="list-unstyled">
+                {% for intervention in bloc.interventions %}
+                    <li>{{ intervention.type }}</li>
+                {% endfor %}
+                </ul>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>

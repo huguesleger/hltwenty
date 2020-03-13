@@ -1,0 +1,32 @@
+<div class="single section slider-swiper-case-study">
+    <div class="half-line before-lines"></div>
+    <div class="wrap-lines container">
+        <div class="row no-gutters">
+            <div class="col-3 liner"></div>
+            <div class="col-3 liner"></div>
+            <div class="col-3 liner"></div>
+            <div class="col-3 liner"></div>
+        </div>
+    </div>
+    <div class="half-line after-lines"></div>
+  <div class="container p-0">
+    <div class="swiper-container hoverable" data-cursor-text="swip">
+      <div class="swiper-wrapper">
+        {% for swip_image in bloc.swip_images %}
+        <div class="swiper-slide"><img src="{{ swip_image.image }}" alt=""></div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 p-0">
+        <div class="wrap-btn">
+          <div class="swiper-button-prev hoverable"></div>
+          <div class="swiper-button-next hoverable"></div>
+        </div>
+        {# <div class="swiper-pagination"></div> #}
+      </div>
+    </div>
+  </div>
+</div>

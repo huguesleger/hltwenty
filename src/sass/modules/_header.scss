@@ -1,0 +1,99 @@
+// header
+// ==================
+.header {
+    position: fixed;
+    min-height: 60px;
+    left:0;
+    right: 0;
+    z-index: 2;
+    .content-header {
+        padding: 3rem 2rem 1rem;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+/**** logo ****/
+.logo {
+    display: flex;
+    align-items: center;
+    z-index: 10;
+    svg {
+       fill: $color_primary;
+       width: 40px;
+       height: 40px;
+    }
+    .title-site {
+        font-size: 1.2rem;
+        color: #fff;
+        padding-left: 10px;
+        transition: 0.2s ease-in-out;
+        transition-delay: 0.8s;
+        &.dark {
+            color: $color_txt;
+        }
+    }
+}
+/**** btn-menu ****/
+.btn-main {
+    position: relative;
+    display: block;
+    width: 30px;
+    z-index: 10;
+    cursor: none;
+    .btn-fill {
+        position: absolute;
+        display: block;
+        width: 30px;
+        top: 50%;
+        right: 0;
+        height: 2px;
+        background: #fff;
+        transition: 0.2s ease-in-out;
+            &::before, &::after {
+            content:'';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: #fff;
+            transform: translateY(-8px);
+            transition: transform 0.3s;
+        }
+        &::after {
+            width: 20px;
+            left: 0;
+            -webkit-transform: translateY(8px);
+            transform: translateY(8px);
+        }
+    }
+    &:hover {
+        .btn-fill::before {
+            transform: translateY(-10px);
+        }
+        .btn-fill::after {
+            transform: translateY(10px);
+        }
+    }
+    &.is-open {
+        .btn-fill {
+            background: transparent !important;
+        }
+        .btn-fill::before {
+            width: 30px;
+            left: -5px;
+            background: $color_primary;
+            transform: translateY(0) rotate(45deg);
+            transition:  0.3s, transform 0.3s;
+
+        }
+        .btn-fill::after {
+            width: 30px;
+            left: -5px;
+            transform: translateY(0) rotate(-45deg);
+            transition: 0.3s, transform 0.3s;
+            background: $color_primary;
+        }
+    }
+}

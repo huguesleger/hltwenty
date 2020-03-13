@@ -1,0 +1,77 @@
+{% extends "base.twig" %}
+{% block loader %}{% endblock %}
+{% block content %}
+{# <div class="content-wrapper">
+		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+			<section class="article-content">
+				<h1 class="article-h1">{{post.title}}</h1>
+				<div class="article-body">
+					{{post.content}}
+				</div>
+			</section>
+		</article>
+	</div> #}
+<div class="hero-page hero-contact">
+	<div class="hero-content rellax" data-position="{{ post.position }}"
+		style="background-image: url('{{ post.thumbnail.src }}')"></div>
+	<div class="hero-title">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1 class="rellax" data-rellax-speed="3">{{post.title}}</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<section class="contact-form">
+	<div class="container form-content">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="info-contact mb-5">
+					<h2 class="mb-4">Connectons-nous</h2>
+					<p>Une question ? Un projet, une idée ? <br>
+						Laissez-moi un message, je vous répondrez dans les meilleurs délais.
+					</p>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="info-block mt-3">
+							<div class="icon icon-map mb-2"></div>
+							<div class="content-block">
+								<h4>Adresse</h4>
+								<p>FRANCE<br>3400 Montpellier</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="info-block mt-3">
+							<div class="icon icon-social mb-2"></div>
+							<div class="content-block">
+								<h4>Réseaux sociaux</h4>
+								<a class="hoverable d-block mb-1" href="https://www.facebook.com/hldeveloppeurweb" target="_blank" rel="noopener noreferrer">facebook</a>
+								<a class="hoverable d-block mb-1" href="https://www.linkedin.com/in/hugues-leger-developpeur-web" target="_blank" rel="noopener noreferrer">linkedin</a>
+								<a class="hoverable d-block" href="https://www.instagram.com/onepale" target="_blank" rel="noopener noreferrer">instagram</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="info-block mt-3">
+							<div class="icon icon-email mb-2"></div>
+							<div class="content-block">
+								<h4>Contact</h4>
+								 <a class="hoverable" href="mailto:contactme@hl-developerz.com">contactme@hl-developerz.com</a>   
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="contact-me">
+					{{post.content}}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}

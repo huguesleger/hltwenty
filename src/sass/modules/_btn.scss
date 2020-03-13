@@ -1,0 +1,20 @@
+// Btn
+// ==================
+.btn-round {
+    border-radius: 4em;
+    padding: 0.6rem 1.5rem;
+}
+.btn-round-outline {
+    border: 1px solid transparent;
+}
+.btn-primary {
+    background-color: $color_primary;
+    border-color: $color_primary;
+}
+.btn-outline-primary {
+    color: $color_primary;
+    border-color: $color_primary;
+}
+.badge-primary {
+    background-color: $color_primary;
+}
