@@ -24,6 +24,7 @@
     .liner {
         height: 100vh;
         border-left: 1px solid #444444;
+        // border-left: 1px solid rgba(220, 220, 220, 0.1);
         background: #fff;
         overflow: hidden;
         .block-line {
@@ -73,6 +74,7 @@
 .after-lines {
     right: 0;
     border-left: 1px solid #444444;
+    // border-left: 1px solid rgba(220, 220, 220, 0.1);
     .block-line {
         right: 0;
     }    

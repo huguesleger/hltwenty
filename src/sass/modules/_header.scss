@@ -6,6 +6,10 @@
     left:0;
     right: 0;
     z-index: 2;
+    // mix-blend-mode: difference;
+    &.is-open {
+        mix-blend-mode: inherit;
+    }
     .content-header {
         padding: 3rem 2rem 1rem;
         display: flex;
@@ -17,8 +21,14 @@
     display: flex;
     align-items: center;
     z-index: 10;
+    &.is-open {
+        svg {
+            fill: $color_primary;
+        }
+    }
     svg {
        fill: $color_primary;
+    // fill: #fff;
        width: 40px;
        height: 40px;
     }
@@ -28,13 +38,25 @@
         padding-left: 10px;
         transition: 0.2s ease-in-out;
         transition-delay: 0.8s;
+        visibility: visible;
+        opacity: 1;
         &.dark {
             color: $color_txt;
+        }
+        &.is-hide {
+            visibility: hidden;
+            opacity: 0;
         }
     }
 }
 /**** btn-menu ****/
 .btn-main {
+    // position: fixed;
+    // left: auto !important;
+    // right: 32px !important;
+    // top: auto !important;
+    // height: 40px !important;
+
     position: relative;
     display: block;
     width: 30px;
@@ -47,8 +69,8 @@
         top: 50%;
         right: 0;
         height: 2px;
-        background: #fff;
-        transition: 0.2s ease-in-out;
+        background-color: #fff;
+        transition: 0.2s ease-in-out, background 0s;
             &::before, &::after {
             content:'';
             display: block;
@@ -57,7 +79,7 @@
             left: 0;
             width: 30px;
             height: 2px;
-            background: #fff;
+            background-color: #fff;
             transform: translateY(-8px);
             transition: transform 0.3s;
         }
@@ -78,22 +100,36 @@
     }
     &.is-open {
         .btn-fill {
-            background: transparent !important;
+            background-color: transparent !important;
         }
         .btn-fill::before {
             width: 30px;
-            left: -5px;
-            background: $color_primary;
+            left: 0;
+            background-color: $color_primary !important;
             transform: translateY(0) rotate(45deg);
             transition:  0.3s, transform 0.3s;
 
         }
         .btn-fill::after {
             width: 30px;
-            left: -5px;
+            left: 0;
             transform: translateY(0) rotate(-45deg);
             transition: 0.3s, transform 0.3s;
-            background: $color_primary;
+            background-color: $color_primary !important;
         }
     }
 }
+
+  .header.dark .btn-main .btn-fill {
+      transition: background-color 0s;
+      background-color: $color_txt;
+      &::before, &::after {
+          background-color: $color_txt;
+          transition: background-color 0s;
+      }
+  }
+  .logo.light {
+      svg {
+          fill: #fff;
+      }
+  }

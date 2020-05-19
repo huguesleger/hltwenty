@@ -10,7 +10,7 @@ body {
 }
 
 a {
-    cursor: none;
+    cursor: none !important;
     color: inherit;
     &:hover, &:focus {
         text-decoration: none;
@@ -53,4 +53,13 @@ button {
 .scroll-content::-scrollbar-thumb
 {
     background-color: #666565;
+}
+
+// Color
+// ==================
+.icon-color {
+    color: $color_primary;
+}
+.bg-grey-light {
+    background-color: #f1f1f1;
 }

@@ -3,6 +3,11 @@
 .section-webdesign {
     position: relative;
     min-height: 800px;
+    .section-infos {
+        .section-desc span {
+            color: $color_primary;
+        }
+    }
 }
 
 .webdesign-icons {
@@ -24,31 +29,31 @@
         background-repeat: no-repeat;
         background-position: center;
         margin: 0 auto;
-        border-radius: 10px;
-        background-color: $bg_grey;
-        -webkit-box-shadow: 0px 0px 20px -2px rgba(0,0,0,0.54);
-        -moz-box-shadow: 0px 0px 20px -2px rgba(0,0,0,0.54);
-        box-shadow: 0px 0px 20px -2px rgba(0,0,0,0.54);
+        border-radius: 50%;
+        // background-color: $bg_grey;
+        border: 1px solid $color_primary;
+        // -webkit-box-shadow: 0px 0px 20px -2px rgba(0,0,0,0.54);
+        // -moz-box-shadow: 0px 0px 20px -2px rgba(0,0,0,0.54);
+        // box-shadow: 0px 0px 20px -2px rgba(0,0,0,0.54);
         &.icon-webdesign {
-            background-image: url('../images/webdesign-white.png');
+            background-image: url('../images/webdesign-red.png');
             background-size: 42%;
         }
         &.icon-integration {
-            background-image: url('../images/integration-white.png');
+            background-image: url('../images/integration-red.png');
             background-size: 55%;
         }
         &.icon-responsive {
-            background-image: url('../images/responsive-white.png');
+            background-image: url('../images/responsive-red.png');
             background-size: 55%;
         }
         &.icon-creative {
-            background-image: url('../images/creative-white.png');
+            background-image: url('../images/creative-red.png');
             background-size: 30%;
         }
     }
     .icon-desc {
         text-align: center;
-        color: #fff;
         font-size: 0.8rem;
         padding-top: 0.5rem;
     }
@@ -65,7 +70,7 @@
     left: 58.8%;
     .wrap-template {
         position: relative;
-        background-image: url('../images/device-2.png');
+        background-image: url('../images/device-white.png');
         background-size: contain;
         width: 950px;
         background-repeat: no-repeat;

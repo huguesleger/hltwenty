@@ -9,7 +9,7 @@
 </article> #}
 
 {# {{ dump(post) }} #}
-	<a href="{{post.link}}" class="col-4 grid-item hoverable {{ post.terms('case-study-type')|join(' ') }}">
+	<a href="{{post.link}}" data-cursor-text="view" class="col-4 p-0 grid-item hoverable {{ post.terms('case-study-type')|join(' ') }}">
 		<div class="work-item">
 		<div class="work-color"></div>
 			{% if post.get_thumbnail %}

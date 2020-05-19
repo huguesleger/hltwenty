@@ -26,7 +26,8 @@
 
 	$formats: (
 		otf: "opentype",
-		ttf: "truetype"
+		ttf: "truetype",
+		woff: "woff"
 	);
 
 	@each $ext in $exts {
@@ -42,3 +43,15 @@
 		src: $src;
 	}
 }
+
+// @font-face {
+//     font-family: 'icomoon';
+//     src:  url('../fonts/icomoon.eot?lvuvun');
+//     src:  url('../fonts/icomoon.eot?lvuvun#iefix') format('embedded-opentype'),
+//       url('../fonts/icomoon.ttf?lvuvun') format('truetype'),
+//       url('../fonts/icomoon.woff?lvuvun') format('woff'),
+//       url('../fonts/icomoon.svg?lvuvun#icomoon') format('svg');
+//     font-weight: normal;
+//     font-style: normal;
+//     font-display: block;
+//   }

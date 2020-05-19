@@ -2,6 +2,7 @@
 // ==================
 $font_renogare: 'Renogare', sans-serif;
 $font_montserrat: 'Montserrat', sans-serif;
+$font_icon: 'icomoon';
 
 // Colors
 // ==================
@@ -13,11 +14,16 @@ $blue_green: #00e4a0;
 $blue_caraib: #00e4bc;
 $blue_turquoise: #0cd2b6;
 $green : #5fea5d;
+$red_pastel: #ff6c6c;
+$turquoise: #4df0e0;
+$purple: #48337b;  
 $grey: #292A2C;
 $grey_dark: #131414;
 $grey_light: #9e9e9e;
 $grey_ultralight: #dee2e6;
 
 $color_primary:$blue_turquoise;
+$color_primary:$red_pastel;
+$color_secondary: $purple;
 $color_txt: $grey_dark;
 $bg_grey: $grey;

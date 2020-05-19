@@ -2,6 +2,7 @@
 // ==================
 .intro {
     background-color: $bg_grey;
+    // background-color: $color_secondary;
 }
 .home-slide--intro {
     height: 100vh;
@@ -85,7 +86,7 @@
         top: 200px;
         right: 187px;
         }
-        .c-line-blue {
+        .c-line-color {
             width: 20px;
             height: 20px;
             border: 2px solid $color_primary;
@@ -100,9 +101,12 @@
         border-right: 18px solid transparent;
         border-bottom: 30px solid $color_txt;
         top: 50px;
-        right: 15px; 
+        right: 15px;
+        &.t-color-top {
+            border-bottom: 30px solid $color_primary;   
+        } 
     }
-    .t-blue {
+    .t-color {
         width: 0;
         height: 0;
         border-left: 8px solid transparent;
@@ -119,7 +123,7 @@
         bottom: 120px;
         right: 100px;
     }
-    .r-blue {
+    .r-color {
         width: 10px;
         height: 10px;
         border-radius: 50%;
@@ -141,8 +145,11 @@
         background: $color_txt;
         top: 30px;
         left: 255px;
+        &.l-color-top {
+            background: $color_primary;    
+        }
     }
-    .l-large-blue {
+    .l-large-color {
         width: 60px;
         height: 2px;
         bottom: 15px;

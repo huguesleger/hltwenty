@@ -106,3 +106,28 @@
         }
     }
 }
+.section-color-dark {
+    background-color: $color_secondary;
+    position: relative;
+    .before-lines {
+        background: transparent;
+        height: 100%;
+    }
+    .after-lines {
+        border-left: 1px solid rgba(220, 220, 220, 0.1);
+        background: transparent;
+        height: 100%;
+    }
+    .wrap-lines {
+        .row {
+            height: 100%;
+            width: 100%;
+            position: relative;
+        }
+        .liner {
+            border-left: 1px solid rgba(220, 220, 220, 0.1);
+            background: transparent;
+            height: 100%;
+        }
+    }
+}

@@ -11,6 +11,10 @@
     width: 100%;
     position: relative;
     min-height: 700px;
+    .wrap-studies-slider {
+      position: relative;
+      min-height: 700px;
+    }
     .slidenav {
         position: relative;
     }
@@ -170,7 +174,7 @@
         font-size: 1rem;
         position: absolute;
         top: 10%;
-        left: 6%;
+        left: -60px;
         z-index: 10;
         .study-bullet {
           display: flex;

@@ -223,6 +223,22 @@ class StarterSite extends Timber\Site {
 			'flex-height' => true,
 		));
 
+
+	/** 
+	 *  add class body
+	*/
+	add_filter( 'body_class', function( $classes ) {
+		if ( is_page( 'case-studies' ) ) {
+		  $classes[] = 'case-studies';
+		} else {
+		  if ( is_page( 'about' ) ) {
+			$classes[] = 'about';
+		}
+	  }
+	  return array_merge( $classes);
+	});
+
+
 	}
 
 
@@ -268,6 +284,7 @@ wp_enqueue_script( 'hltwentytweenmax', 'https://cdnjs.cloudflare.com/ajax/libs/g
 wp_enqueue_script( 'hltwenty-timelinemax', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js', array('jquery'), '', true );	
 wp_enqueue_script( 'hltwenty-three', 'https://cdnjs.cloudflare.com/ajax/libs/three.js/99/three.min.js', array('jquery'), '', true );
 wp_enqueue_script( 'swiper.bundle', get_template_directory_uri() . '/public/vendor/swiper.min.js');
+wp_enqueue_script( 'midnight.bundle', get_template_directory_uri() . '/public/vendor/midnight.min.js');
 wp_enqueue_script( 'vendor.bundle', get_template_directory_uri() . '/public/js/vendor-bundle.js');
 wp_enqueue_script( 'script.bundle', get_template_directory_uri() . '/public/js/script-bundle.js');
 

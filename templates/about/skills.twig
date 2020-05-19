@@ -34,7 +34,6 @@
                         <p class="mb-2">{{ type.nom }}</p>
                         {% if type.pratique == true  %}
                         <span class="badge badge-primary">{{ type.pratique }} %</span>
-                        <div class="overlay-skill" style="background-image: url('{{ type.icon }}')"></div>
                         {% endif %}
                     </div>
             {% if loop.index is divisible by(4) or loop.last %}

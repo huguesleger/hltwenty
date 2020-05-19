@@ -1,5 +1,7 @@
 <section class="section section-graphisme pb-5">
     <div class="half-line before-lines"></div>
+
+
     <div class="wrap-lines container">
         <div class="row no-gutters">
             <div class="col-3 liner"></div>
@@ -18,7 +20,7 @@
             </div>
             {% for texte in bloc.textes %}
             <div class="col-md-3 pl-0">
-                <i class="fas {{ texte.icon }}"></i>
+                <i class="icon-color fas {{ texte.icon }}"></i>
                 <h4 class="h4 mb-3">{{ texte.titre_bloc }}</h4>
                 <p>{{ texte.description_bloc }}</p>
             </div>

@@ -64,9 +64,8 @@
 		</div>
 	</div>
 	{% endblock %}
-	<div class="app" id="app">
+	{% block header %}
 		<header class="header">
-		{% block header %}
 			<div class="content-header">
 				<a class="logo hoverable" href="{{site.url}}" rel="home"><img src="{{custom_logo_url}}" />
 					<span class="title-site">{{site.name}}</span>
@@ -75,7 +74,8 @@
 					<span class="btn-fill"></span>
 				</div>
 			</div>
-			<nav id="nav-main" class="main" role="navigation">
+		</header>
+		<nav id="nav-main" class="main" role="navigation">
 			<div class="half-line before-lines"></div>
 			<div class="wrap-lines container">
 				<div class="row no-gutters">
@@ -89,9 +89,9 @@
 				<div class="container px-0">
 					{% include "menu.twig" with {'items': menu.get_items} %}
 				</div>
-			</nav>
-		{% endblock %}
-		</header>
+		</nav>	
+	{% endblock %}
+	<div class="app" id="app">
 	{% block content %}
 	{% endblock %}
 	{% block footer %}
