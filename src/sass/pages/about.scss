@@ -30,18 +30,15 @@
 .number-about {
     padding: 6rem 0;
     color: #fff;
-    // text-align: center;
     .number {
         font-family: $font_renogare;
         font-size: 3rem;
         p {
-            // border-bottom: 2px solid;
             margin-bottom: 0;
         }
         &::after {
             content:'';
             display: block;
-            // margin: 0 auto;
             width: 30px;
             height: 2px;
             background-color: #fff;
@@ -75,20 +72,11 @@
                 counter-increment: cursusCounter;
                 position: absolute;
                 top: 0;
-                // left: -25px;
-                // width: 50px;
                 font-family: $font_renogare;
-                // font-size: 5rem;
-                // transform: rotate(-90deg);
-                // line-height: 0;
-                // color: $grey_ultralight;
-                // z-index: -1;
-
                 left: 0;
                 width: 180px;
                 font-size: 8rem;
                 transform: rotate(-90deg) translate(110px, -38px);
-                // color: #f7f7f7;
                 color:  #f3f3f3;
             }
             .start-year {
@@ -125,13 +113,8 @@
     padding: 6rem 0;
     color: #fff;
     .wrap-skill {
-        // display: grid;
-        // grid-template-columns: 25% 25% 25% 25%;
         .row-skill {
             .box-skill {
-                // border: 1px solid #dcdcdc;
-                // border-top: 1px solid #dcdcdc;
-                // border-right: 1px solid #dcdcdc;
                 text-align: center;
                  width: 25%;
                  height: 200px;
@@ -139,17 +122,10 @@
                  justify-content: center;
                  align-items: center;
                  flex-direction: column;
-                // border-right: 0;
-                // &:first-child {
-                //     border-left: 1px solid #dcdcdc;
-                // }
                 img {
                     filter: invert(1);
                 }
             }
-            // &:last-child {
-            //     border-bottom: 1px solid #dcdcdc;
-            // }
             &::after {
                 content:'';
                 display: block;
@@ -157,13 +133,6 @@
                 height: 1px;
                 background-color: #444444;
             }
-            // &:first-child::before {
-            //     content:'';
-            //     display: block;
-            //     width: calc(100% - 2px);
-            //     height: 1px;
-            //     background-color: #444444;
-            // }
             &:last-child::after {
                 display: none;
             }

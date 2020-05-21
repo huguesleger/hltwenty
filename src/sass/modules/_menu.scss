@@ -34,7 +34,6 @@
         font-family: $font_renogare;
         counter-reset: itemCounter;
         display: flex;
-        // justify-content: space-between;
         flex-direction: column;
         margin-bottom: 0;
         opacity: 0;
@@ -47,7 +46,6 @@
             display: inline-flex;
         .item{
             position: relative;
-            // margin: 0 15px;
             z-index: 1;
             color: $color_txt;
             &::before {

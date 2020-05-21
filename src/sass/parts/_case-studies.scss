@@ -24,9 +24,6 @@
         position: absolute;
         top: 0;
         left: 0;
-        // z-index: -1;
-        // visibility: hidden;
-        // opacity: 0;
         .container {
             position: relative;
             padding: 0;
@@ -43,21 +40,10 @@
                   height: 100%;
                   z-index: -1;
                   width: 100%;
-                  // .element {
-                  //   background: #fff;
-                  // }
-                  // .c-line {
-                  //   border-color: #fff;
-                  //   background: transparent;
-                  // }
                   .c-line-blue {
                     border-color: $color_txt;
                     background: transparent;
                   }
-                  // .t {
-                  //   border-bottom-color: #fff;
-                  //   background: transparent;                 
-                  // }
                   .r-blue, .l-large-blue {
                     background: $color_txt;
                   }
@@ -66,9 +52,6 @@
                     left: 405px;
                     bottom: 130px;
                   }
-                  // .more::after, .x::after {
-                  //   background: #fff;
-                  // }
                 }
                 .work-left {
                     transform: translate3d(0%, 0px, 0px);
@@ -76,7 +59,6 @@
                     padding: 2.5rem;
                     min-height: 700px;
                     width: calc(100% + 1px);
-                    // transition: transform 0.5s ease-in-out;
                 }
                 .content-img {
                     overflow: visible;
@@ -108,11 +90,7 @@
       position: absolute;
       z-index: 1;
       transform-origin: top;
-      // opacity: 0;
-      //  visibility: hidden;
-      // width: 34%;
       bottom: calc(2rem + 5vw);
-      // left: calc(2.5rem + 53vw);
       overflow: hidden;
         .case-study-title {
           font-size: 3.5rem;
@@ -182,14 +160,6 @@
           padding: 0.5rem 0;
           opacity: 0.6;
           overflow: hidden;
-          // &.is-active {
-          //   .bullet-number {
-          //     color: $grey_dark;
-          //   }
-          //   .bullet-line {
-          //     background-color: $grey_dark;
-          //   }
-          // }
         }
         .bullet-number {
           padding-right: 1rem;
@@ -218,11 +188,7 @@
       }
       .work-left {
         min-height: 590px;
-        // position: absolute;
       }
-      // .content-img {
-      //   position: relative;
-      // }
     }
     .case-study-txt {
       position: relative;

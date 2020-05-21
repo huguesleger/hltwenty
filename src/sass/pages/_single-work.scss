@@ -76,7 +76,6 @@
         h3 {
             font-size: 1.5rem;
             font-weight: 200;
-            // display: inline-block;
         }
         p {
             font-family: $font_renogare;
@@ -144,7 +143,6 @@
 // swiper slider
 // ==================
 .swiper-container {
-	// padding-left: 25rem;
     height: 100%;
     padding-top: 6rem;
 }
@@ -166,30 +164,9 @@
     box-sizing: content-box;
 }
 .swiper-slide {
-    // width: 1080px;
-    // text-align: center;
-    
-	// font-size: 18px;
-	// background: #fff;
-	// display: -webkit-box;
-	// display: -ms-flexbox;
-	// display: -webkit-flex;
-	// display: flex;
-	// -webkit-box-pack: center;
-	// -ms-flex-pack: center;
-	// -webkit-justify-content: center;
-	// justify-content: center;
-	// -webkit-box-align: center;
-	// -ms-flex-align: center;
-	// -webkit-align-items: center;
-    // align-items: center;
-    // opacity: 0.5;
-    // transition: opacity 0.3s ease-in-out;
-
     flex-shrink: 0;
     width: 1080px;
     height: 100%;
-    //padding-right: 25px;
     position: relative;
     -webkit-transition-property: -webkit-transform;
     transition-property: -webkit-transform;
@@ -198,8 +175,6 @@
         opacity: 0.5;
     transition: opacity 0.3s ease-in-out;
      img {
-        //  max-width: 420px;
-        //max-height: 420px;
         width: 100%;
         height: 100%;
      }
@@ -219,12 +194,8 @@
 }
 .swiper-button-prev,
 .swiper-button-next {
-  //position: absolute;
-  //top: 50%;
   width: 50px;
   height: 28px;
-//   margin-top: -22px;
-//   z-index: 10;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -241,22 +212,16 @@
 .swiper-button-prev,
 .swiper-container-rtl .swiper-button-next {
   background-image: url('../images/arrow-left.png');
-//   left: 10px;
-//   right: auto;
 }
 .swiper-button-next,
 .swiper-container-rtl .swiper-button-prev {
   background-image: url('../images/arrow-right.png');
-//   right: 10px;
-//   left: auto;
 }
 
 .swiper-pagination {
     padding: 30px 0;
     display: flex;
     justify-content: space-between;
-    // position: absolute;
-    // text-align: center;
     -webkit-transition: 300ms opacity;
     -o-transition: 300ms opacity;
     transition: 300ms opacity;
@@ -281,9 +246,6 @@
     background: #000;
     opacity: 0.2;
   }
-//   .swiper-pagination-clickable .swiper-pagination-bullet {
-//     cursor: pointer;
-//   }
 .swiper-pagination-bullet-active {
 opacity: 1;
 background: #007aff;
@@ -308,11 +270,6 @@ margin: 0 5px;
     padding-top: 6rem;
     }
 }
-
-// template
-// ==================
-// .template-case-study {
-// }
 
 // bloc 2 txt
 // ==================
