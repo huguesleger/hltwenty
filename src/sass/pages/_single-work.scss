@@ -440,3 +440,38 @@ margin: 0 5px;
         }
     }
 }
+
+@include maxwidth(sm) {
+    .detail-case-study {
+        padding-bottom: 4rem;
+        .detail-desc {
+            margin-bottom: 4rem;
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    }
+    .branding-case-study, .bloc-2-txt-case-study, .bloc-txt-case-study, .bloc-3-txt-case-study, .device-laptop-case-study {
+        padding: 4rem 0;
+    }
+    .swiper-container {
+        padding-top: 0;
+    }
+    .device-case-study .device-img {
+        padding: 4rem 0;
+        height: auto;
+    }
+    .device-laptop-case-study .wrap-elements {
+        height: 100%;
+    }
+    .navigation-case-study .wrap-navigation {
+        margin: 3rem 0;
+        flex-direction: column;
+        a {
+            font-size: 1.5rem;
+        }
+        .prev-case-study {
+            margin-bottom: 2rem;
+        }
+    }
+}

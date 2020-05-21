@@ -133,3 +133,9 @@
           fill: #fff;
       }
   }
+
+  @include maxwidth(sm) {
+   .logo .title-site {
+       display: none;
+   }   
+  }

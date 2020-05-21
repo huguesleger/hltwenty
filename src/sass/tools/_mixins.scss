@@ -44,14 +44,180 @@
 	}
 }
 
-// @font-face {
-//     font-family: 'icomoon';
-//     src:  url('../fonts/icomoon.eot?lvuvun');
-//     src:  url('../fonts/icomoon.eot?lvuvun#iefix') format('embedded-opentype'),
-//       url('../fonts/icomoon.ttf?lvuvun') format('truetype'),
-//       url('../fonts/icomoon.woff?lvuvun') format('woff'),
-//       url('../fonts/icomoon.svg?lvuvun#icomoon') format('svg');
-//     font-weight: normal;
-//     font-style: normal;
-//     font-display: block;
-//   }
+/**** breakpoints ****/
+
+$breakpoints: (
+xxs: 470px, /**** petit smartphones (vue portrait) ****/
+xs: 576px, /**** petites tablettes et grands smartphones (vue paysage) ****/
+sm: 768px, /**** petites tablettes (vue portrait) ****/
+md: 992px, /**** tablettes et petit ordinateur ****/
+lg: 1200px /**** grandes tablettes et grand ordinateur ****/
+);
+
+/**** mixin mq ****/
+
+/**** min-width ****/
+
+// @include minwidth(sm) {}
+@mixin minwidth($breakpoint) {
+
+  // si un breakpoint existe
+  @if map-has-key($breakpoints, $breakpoint) {
+
+    // valeur du breakpoint
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    //media query.
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+
+  // Si y'a pas de breakpoint
+  } @else {
+
+    // message d'erreur
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+/**** min-width and orientation landscape ****/
+
+// @include minwidth(sm) {}
+@mixin minwidthlandscape($breakpoint) {
+
+  // si un breakpoint existe
+  @if map-has-key($breakpoints, $breakpoint) {
+
+    // valeur du breakpoint
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    //media query.
+    @media screen and (min-width: $breakpoint-value) and(orientation:landscape) {
+      @content;
+    }
+
+  // Si y'a pas de breakpoint
+  } @else {
+
+    // message d'erreur
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+/**** max-width  ****/
+
+// @include maxwidth(sm) {}
+@mixin maxwidth($breakpoint) {
+
+  // si un breakpoint existe
+  @if map-has-key($breakpoints, $breakpoint) {
+
+    // valeur du breakpoint
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    //media query.
+    @media (max-width: ($breakpoint-value - 1)) {
+      @content;
+    }
+
+  // Si y'a pas de breakpoint
+  } @else {
+
+    // message d'erreur
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+/**** maxwidth and orientation landscape ****/
+@mixin maxwidthlandscape($breakpoint) {
+
+  // si un breakpoint existe
+  @if map-has-key($breakpoints, $breakpoint) {
+
+    // valeur du breakpoint
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    //media query.
+    @media screen and (max-width: ($breakpoint-value - 1))and(max-height: 415px) and(orientation: landscape) {
+      @content;
+    }
+
+  // Si y'a pas de breakpoint
+  } @else {
+
+    // message d'erreur
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+/**** min-width & max-width ****/
+
+// @include minmaxwidth(sm, md) {}
+@mixin minmaxwidth($lower, $upper) {
+
+  // si les breakpoints inferieur et superieur existe
+  @if map-has-key($breakpoints, $lower) and map-has-key($breakpoints, $upper) {
+
+    // valeur des  breakpoints
+    $lower-breakpoint: map-get($breakpoints, $lower);
+    $upper-breakpoint: map-get($breakpoints, $upper);
+
+    // media query.
+    @media (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint - 1)) {
+      @content;
+    }
+
+  // si y'a pas de breakpoint
+  } @else {
+
+    // si le breakpoint inferieur est invalide
+    @if (map-has-key($breakpoints, $lower) == false) {
+
+      // message d'erreur
+      @warn 'Your lower breakpoint was invalid: #{$lower}.';
+    }
+
+    // si le breakpoint superieur est invalide
+    @if (map-has-key($breakpoints, $upper) == false) {
+
+      // message d'erreur
+      @warn 'Your upper breakpoint was invalid: #{$upper}.';
+    }
+  }
+}
+
+/**** min-width & max-width landscape ****/
+
+// @include minmaxwidthlandscape(sm, md) {}
+@mixin minmaxwidthlandscape($lower, $upper) {
+
+  // si les breakpoints inferieur et superieur existe
+  @if map-has-key($breakpoints, $lower) and map-has-key($breakpoints, $upper) {
+
+    // valeur des  breakpoints
+    $lower-breakpoint: map-get($breakpoints, $lower);
+    $upper-breakpoint: map-get($breakpoints, $upper);
+
+    // media query.
+    @media screen and (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint - 1)) and (orientation: landscape) {
+      @content;
+    }
+
+  // si y'a pas de breakpoint
+  } @else {
+
+    // si le breakpoint inferieur est invalide
+    @if (map-has-key($breakpoints, $lower) == false) {
+
+      // message d'erreur
+      @warn 'Your lower breakpoint was invalid: #{$lower}.';
+    }
+
+    // si le breakpoint superieur est invalide
+    @if (map-has-key($breakpoints, $upper) == false) {
+
+      // message d'erreur
+      @warn 'Your upper breakpoint was invalid: #{$upper}.';
+    }
+  }
+}

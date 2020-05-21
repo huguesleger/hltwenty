@@ -92,3 +92,23 @@
 .btn-webdesign {
     margin-top: 4rem;
 }
+
+@include maxwidth(sm) {
+    .webdesign-icons {
+        flex-direction: column;
+        .wrap-icon {
+            margin: 0;
+            margin-bottom: 15px;
+        }
+    }
+    .webdesign-template {
+        position: relative;
+        left: 0;
+    } 
+  }
+
+  @include minmaxwidth(sm, md) {
+    .webdesign-template {
+      top: 20%;
+    }
+  }

@@ -859,10 +859,9 @@ var sliderPosition2 = $('#caseStudiesSlider').innerHeight();
       $('.case-studies-slider').removeClass('is-play');
       stopAutoPlay();
     }
-
-
   });
-  
+
+
 function init() {
 	// TweenMax.set($overlays, {
     //     x: "0%"
@@ -1194,7 +1193,6 @@ function stopAutoPlay() {
 	TweenLite.killDelayedCallsTo(play);
 }
 init();
-
 }
   /*--------------------------------------------
     scroll reveal

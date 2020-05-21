@@ -12,8 +12,10 @@ body {
 a {
     cursor: none !important;
     color: inherit;
+    transition: 0.2s ease-in-out;
     &:hover, &:focus {
         text-decoration: none;
+        color: $color_primary;
     }
 }
 
@@ -63,3 +65,42 @@ button {
 .bg-grey-light {
     background-color: #f1f1f1;
 }
+
+@include maxwidth(sm) {
+#app {
+    [class*="col-"] {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    .item-case-study {
+        [class*="col-"]{
+              padding-left: 0 !important;
+              padding-right: 0 !important;
+          }
+      }
+    // .works {
+    //     [class*="col-"]{
+    //         padding-left: 0 !important;
+    //         padding-right: 0 !important;
+    //     } 
+    // }
+}
+    .main {
+        .container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;  
+        }
+    }
+    .txt-center-sm {
+        text-align: center !important;
+    }
+}
+
+@include minmaxwidth(sm, md) {
+    .text-left-md-lg {
+      text-align: left !important;
+    }
+    .pl-md-lg-0 {
+        padding-left: 0 !important;
+      }
+  }

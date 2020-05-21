@@ -171,3 +171,27 @@
     }
 
 }
+
+@include maxwidth(sm) {
+    .skill-about .wrap-skill .row-skill .box-skill {
+        width: 50%;
+    }
+    .presentation-about .detail-presentation h2, 
+    .presentation-about .detail-presentation h3, 
+    .presentation-about .detail-presentation h4,
+    .presentation-about .detail-presentation h5 {
+        font-size: 1.8rem;
+    }
+    .cursus-about .blocs-cursus .bloc-cursus {
+        margin-bottom: 110px;
+    }
+    .cursus-about .blocs-cursus .col-md-3:last-child .bloc-cursus {
+        margin-bottom: 0;
+    }
+    .presentation-about {
+        padding-bottom: 4rem;
+    }
+    .cursus-about, .number-about, .services-about, .skill-about {
+        padding: 4rem 0;
+    }
+}

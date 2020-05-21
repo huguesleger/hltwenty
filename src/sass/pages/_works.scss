@@ -110,3 +110,36 @@
         color: $color_primary;
     }
 }
+
+@include maxwidth(sm) {
+    .works .work-item {
+        margin: 0 15px 15px 15px;
+    }
+    .wrap-btn-filter {
+        padding-top: 3rem;
+        margin-bottom: calc(3rem - 15px) !important;
+    }
+    .btn-filter {
+        margin-bottom: 15px;
+    }
+    .page-case-studies {
+        background-color: $bg_grey;
+        .hero-title {
+            text-align: left;
+            top: 20%;
+            color: #fff;
+            h1 {
+                font-size: 3rem;
+            }
+        }
+        .hero-content {
+            opacity: 0.5;
+        }
+    }
+    .case-studies .btn-main .btn-fill {
+        background-color: #fff;
+        &::after, &::before {
+            background-color: #fff;
+        }
+    }
+}

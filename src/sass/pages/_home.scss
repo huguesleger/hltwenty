@@ -188,3 +188,15 @@
         }
     }
 }
+
+@include maxwidth(sm) {
+    .home-slide--intro {
+        padding-left: 15px;
+        padding-right: 15px;
+    .title-intro {
+        // color: #403e3e;
+        // font-size: 4.4rem;
+        display: none;
+    }
+} 
+  }
