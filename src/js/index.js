@@ -74,15 +74,12 @@ function onMouseHoverOut() {
             TweenMax.to(view, .3, {
         opacity: 0
     });
-    //  $('.circle-cursor--view').text("");
-
 }
 }
 /*--------------------------------------------
     smoothScroll
 ---------------------------------------------*/ 
 function smoothScroll() {
- 
     
 var html = document.documentElement;
 var body = document.body;
@@ -188,7 +185,7 @@ function onResize() {
 
 }
 /*--------------------------------------------
-    loader
+    Lines
 ---------------------------------------------*/ 
 function lines() {
     var containerLines = $('.wrap-lines.container').width();
@@ -267,23 +264,14 @@ function navigation(){
         $('.logo .title-site').css('transition-delay','0.4s');
         setTimeout(function(){
             $('.btn-main').addClass('is-open');
-            // $('.logo').addClass('is-open');
-            // $('.header').addClass('is-open');
         }, 400); 
     }else {
          $('.logo .title-site').css('transition-delay','0.8s');
                  setTimeout(function(){
             $('.btn-main').removeClass('is-open');
-            // $('.logo').removeClass('is-open');
-            // $('.header').removeClass('is-open');
         }, 800); 
     }
 });
-
-	/* 8. Change menu background */
-	// $(document).on('mouseover', '.main-item .item', function(){		
-	// 	$(this).addClass('img-active').siblings().removeClass('img-active')
-	// });
 }
 /*--------------------------------------------
     hide title navbar
@@ -588,24 +576,10 @@ background: 'transparent'
     case studies homepage
 ---------------------------------------------*/ 
 function caseStudies(){
-    var wrapImg = $('.liner').width() * 2 + 2;
-    // var color = $('.section .work-left').attr('data-color');
-        // $('.section .work-left').css({
-        //     width: wrapImg,
-        //     background: color
-        // })
-    // $('.hoverlay-work .wrap-elements').css({
-    //     width:wrapImg
-    // })
     $('.section .work-left').each(function(){
-        // $(this).css({
-        //     width: wrapImg,
-        //     background: color
-        // })
      var $this = $(this),
             color = $this.attr('data-color');
         $($this).css({
-            // width: wrapImg,
             background: color
         })
     }) ;   
@@ -614,215 +588,6 @@ function caseStudies(){
     case studies slider
 ---------------------------------------------*/
 function caseStudiesSlider(){
-    // var slider = $('.case-studies-slider');
-    // var itemSlide = slider.find('.item-case-study').length;
-    // var item = $('item-case-study');
-    // var fisrtItem = $('.item-case-study:first-child');
-    // var fisrtItemIsActive = fisrtItem.addClass('is-active');
-    // var curSlide = 0;
-    // var btn = $('.slide-nav-next');
-     var E = "Power1.easeInOut";
-     var C = "Power3.easeOut";
-    var tl;
-    var init_tl;
-
-
-
-
-    init_tl = new TimelineMax({
-        id: "initial",
-        //delay: 9,
-        onComplete: function() {
-            tl.play()
-        }
-    }),
-
-
-    tl = new TimelineMax({
-        paused: !0,
-        id: "normal",
-        onComplete: function() {}
-    });
-
-
-
-
-
-
-  var $slider = $(".case-studies-slider"),
-      $slideBGs = $(".work-left"),
-      diff = 0,
-      curSlide = 0,
-      numOfSlides = $(".item-case-study").length-1,
-      animating = false,
-      animTime = 6000,
-      autoSlideTimeout,
-      autoSlideDelay = 6000,
-      $pagination = $(".slider-pagi");
-  
-  function autoSlide() {
-    autoSlideTimeout = setTimeout(function() {
-      curSlide++;
-      if (curSlide > numOfSlides) curSlide = 0;
-
-      changeSlides();
-    }, autoSlideDelay);
-
-    // tl.set(".work-left",{
-    //     x: "0%"
-    // }, "+=2.5")
-    // .from(".work-left", 0.8, {
-    //     x: "-100%"
-    // })
-    // .set(".content-img", {
-    //     opacity: 1,
-    //     y: "0",
-    //     ease: E
-    // }, "+=0.5")
-    // .from(".content-img", 0.5, {
-    //     opacity: 0,
-    //     y: "20px"
-    // })
-
-  };
-  
-  autoSlide();
-  
-  function changeSlides(instant) {
-    if (!instant) {
-      animating = true;
-      $slider.css("top");
-      $(".item-case-study").removeClass("is-active");
-      $(".item-case-study-"+curSlide).addClass("is-active");
-      setTimeout(function() {
-
-        animating = false;
-      }, animTime);
-    }
-    window.clearTimeout(autoSlideTimeout);
-    $(".slider-pagi__elem").removeClass("active");
-    $(".slider-pagi__elem-"+curSlide).addClass("active");
-
-    //     init_tl.addLabel("initial").set('.content-img', {
-    //     opacity: 0
-    // }, "initial").to('.content-img', 1,{
-    //     opacity: 1
-    // }),
-    //     tl.set($slideBGs, {
-    //         x: "-100%",
-    //         ease: E
-    //     }).to($slideBGs, 1.5, {
-    //         x: "0%",
-    //         ease: C   
-    //     });
-
-
-
-    //   init_tl.addLabel("initial").set(".work-left", {
-    //     x: "-100%"
-        
-    // }, "initial").to(".work-left", 1,{
-    //     x: "0%"
-    // }, "initial").fromTo(".content-img", .5, {
-    //     opacity: 0,
-    //     y: "20px"
-    // }, {
-    //     opacity: 1,
-    //     y: "0",
-    //     ease: E
-    // }),
-    // tl.to(".content-img", .5, {
-    //     opacity: 0,
-    //     y: "-10px",
-    //     ease: E
-    // }, "+=3.5").to(".work-left", 1, {
-    //      x: "100%"   
-    // });
-    
-
-    //good timeline
-    // init_tl.addLabel("initial").fromTo(".content-img",.5, {
-    //     opacity: 0,
-    //     y: "20px"
-    // }, {
-    //     opacity: 1,
-    //     y: "0",
-    //     ease: E 
-    // }),
-    // tl.fromTo(".work-left", .8, {
-    //      x: "-100%"   
-    // }, {
-    //      x: "0%" 
-    // });  
-
-    //good timeline mieux
-
-    // init_tl.addLabel("initial").set(".content-img", {
-    //     opacity: 0,
-    //     y: "20px"
-    // }, "initial").to(".content-img", .5, {
-    //     opacity: 1,
-    //     y: "0",
-    //     ease: E
-    // }),
-    // tl.set(".work-left",  {
-    //     x: "-100%"
-    // }).to(".work-left", .8, {
-    //     x: "0%"
-    // }).to(".content-img", .5, {
-    //     opacity: 0,
-    //     y: "20px",
-    //     ease: C
-    // }).to(".work-left", .8, {
-    //     x: "100%"
-    // });
-
-    // tl.set(".work-left",{
-    //     x: "0%"
-    // }, "+=2")
-    // .from(".work-left", 0.8, {
-    //     x: "-100%"
-    // })
-    // .set(".content-img", {
-    //     opacity: 1,
-    //     y: "0",
-    //     ease: E
-    // }, "+=0.5")
-    // .from(".content-img", 0.5, {
-    //     opacity: 0,
-    //     y: "20px"
-    // })
-    // tl.set(".work-left", {
-    //     x: "0%"
-    // }, "+=2")
-    // .to(".work-left", 0.8, {
-    //     x: "100%"
-    // })
-
-
-
-    diff = 0;
-    autoSlide();
-  }
-   tl.play()
-
-  function navigateLeft() {
-    if (animating) return;
-    if (curSlide > 0) curSlide--;
-    changeSlides();
-  }
-
-  function navigateRight() {
-    if (animating) return;
-    if (curSlide < numOfSlides) curSlide++;
-    changeSlides();
-  }
-
-}
-
-
-
-function slider5(){
 var $slider = $(".case-studies-slider");
 var $slides = $slider.find(".item-case-study");
 var $overlays = $slider.find(".work-left");
@@ -848,7 +613,6 @@ var autoSlideDelay = 6000;
 var E = "Power4.easeInOut";
 var C = "Power3.easeOut";
 var numOfSlides = $(".item-case-study").length-1;
-// var sliderPosition = $('#caseStudiesSlider').offset().top;
 var sliderPosition2 = $('#caseStudiesSlider').innerHeight();
 
   $(window).on('scroll', function(){
@@ -863,9 +627,6 @@ var sliderPosition2 = $('#caseStudiesSlider').innerHeight();
 
 
 function init() {
-	// TweenMax.set($overlays, {
-    //     x: "0%"
-    // });
     	TweenMax.set($overlays, {
 		x: "-100%"
     });
@@ -898,10 +659,8 @@ function init() {
 
 	$navPrev.on("click", gotoPrevSlide);
 	$navNext.on("click", gotoNextSlide);
-	//$startAutoplay.on("click", startAutoPlay);
 	$stopAutoplay.on("click", stopAutoPlay);
     gotoSlide(0, 0);
-                // startAutoPlay();
 
 }
 
@@ -963,53 +722,7 @@ function gotoSlide(slideID, _time, _direction) {
 			direction = _direction;
 		}
 		if (direction == "next") {
-			// TweenMax.to($prevSlide, time, {
-			// 	left: "-100%"
-			// });
-			// TweenMax.fromTo($currentSlide, time, {
-            //     left: "100%",
-            //     delay: "2.5"
-			// }, {
-			// 	left: "0"
-            // });
-
-            // 			TweenLite.to($overlay, time, {
-			// 	x: "100%"
-			// });
-			// TweenLite.fromTo($currentOverlay, time, {
-			// 	x: "-100%"
-			// }, {
-			// 	x: "0%"
-            // });
-
-            // .set(".content-img", {
-            //     opacity: 1,
-            //     y: "0",
-            //     ease: E
-            // }, "+=0.5")
-            // .from(".content-img", 0.5, {
-            //     opacity: 0,
-            //     y: "20px"
-            // })
-
-            // tl.set($currentOverlay,{
-            //     x: "0%"
-            // }, "+=0.5")
-            // .from($currentOverlay, 0.8, {
-            //     x: "100%"
-            // })
-
             var tl = new TimelineMax({repeat:0});
-
-            // tl.from($prevSlide, time, {
-            //     left: "100%" ,
-            //     opacity: "0",
-            //     visibility: "visible"               
-            // }, "+=3.5").to($prevSlide, time, {
-            //     left: "-100%",
-            //     opacity: "1",
-            //     visibility: "visible"
-            // })
 
             TweenMax.to($prevOverlay, 0.8, {
                 x: "100%",
@@ -1133,16 +846,6 @@ function gotoSlide(slideID, _time, _direction) {
                 ease: E  
             });
 
-
-		} else {
-			// TweenLite.to($prevSlide, time, {
-			// 	left: "100%"
-			// });
-			// TweenLite.fromTo($currentSlide, time, {
-			// 	left: "-100%"
-			// }, {
-			// 	left: "0"
-			// });
 		}
 		TweenLite.delayedCall(time, function() {
             isAnimating = false;
@@ -1153,9 +856,6 @@ function gotoSlide(slideID, _time, _direction) {
 function play(){
     gotoNextSlide();
     TweenLite.delayedCall(12, play);
-
-// tl.play()
-
 }
 
 function startAutoPlay(immediate) {
@@ -1166,33 +866,14 @@ function startAutoPlay(immediate) {
 	if (immediate) {
          gotoNextSlide();
     }
-    //      setTimeout(function() {
-
-    //      play();
-    //   }, 3000);
     TweenLite.delayedCall(12, play);
- }
-
-  
-//   function autoSlide() {
-//     autoSlideTimeout = setTimeout(function() {
-//       currentSlideID++;
-//       if (currentSlideID > numOfSlides) currentSlideID = 0;
-
-//       gotoNextSlide();
-//     }, autoSlideDelay);
-
-
-
-//   };
-  
-//   autoSlide();
+}
 
 function stopAutoPlay() {
   isAutoPlay = false;
 	TweenLite.killDelayedCallsTo(play);
 }
-init();
+    init();
 }
   /*--------------------------------------------
     scroll reveal
@@ -1298,34 +979,6 @@ function goToTop() {
     formulaire contact
 ---------------------------------------------*/
 function contactForm() {
-    // $('.wrap-form-contact input').on("focus blur", function() {
-    //     if ($(this).val().length > 0 || $('.wrap-form-contact input').is(':focus')) {
-    //       $(this).siblings().addClass('active');
-    //       $(this).parent().addClass('active');
-      
-    //     } else {
-    //       $(this).siblings().removeClass('active').addClass('not');
-    //       $(this).parent().removeClass('active').addClass('not');
-    //     }
-      
-    //     if ($(this).val().length < 2 && $('.wrap-form-contact input').is(':focus') != true && $(this).is(':invalid') || $(this).is(':invalid') && $('.wrap-form-contact input').is(':focus') != true) {
-    //       $(this).parent().addClass('invalid');
-    //       $(this).siblings().addClass('invalid');
-    //     } else {
-    //       $(this).parent().removeClass('invalid');
-    //       $(this).siblings().removeClass('invalid');
-    //     }
-      
-    //     if ($(this).val().length > 0 && $(this).is(':valid') && $('.wrap-form-contact input').is(':focus') != true) {
-    //       $(this).parent().addClass('valid');
-    //       $(this).siblings().addClass('valid');
-    //     } else {
-    //       $(this).parent().removeClass('valid');
-    //       $(this).siblings().removeClass('valid');
-    //     }
-      
-    //   });
-
         $('.wrap-form-contact input, .wrap-form-contact textarea').on("focus blur", function() {
         if  ($('.wrap-form-contact input, .wrap-form-contact textarea').is(':focus')) {
           $(this).siblings().addClass('active');
@@ -1336,8 +989,7 @@ function contactForm() {
         } else {
           $(this).siblings().removeClass('active');
           $(this).parent().removeClass('active');
-        }
-          
+        }   
       });    
 } 
   /*--------------------------------------------
@@ -1349,19 +1001,6 @@ function headerContact() {
     $(heroContact).css({
         backgroundPosition: 100 +'%' + position + '%'
     })
-  
-    // $(document).on('scroll', function(){
-    //     var opacity = 1;
-    //     var heroContact = $('.hero-contact').outerHeight() / 2;
-    //     var contactTitle = $('.hero-contact .hero-title h1');
-
-    //     if(heroContact < $(document).scrollTop()){
-    //         opacity = 0;
-    //         }else {    
-    //         opacity = opacity - ( $(document).scrollTop() / heroContact ); 
-    //         }
-    //         contactTitle.css('opacity', opacity);
-    // });
 }
   /*--------------------------------------------
     header title opacity
@@ -1388,11 +1027,6 @@ function confirmContact() {
        $('.contact-me').addClass('no-shadow');
        $('.contact-me').append($('<div class="send-email animated infinite pulse delay-2s slower"></div>'));
     }
-
-    // setTimeout(function(){
-    //     $('.wpforms-confirmation-container-full').addClass('is-hide');
-    //     // $(location).attr('href', '//localhost:3000');
-    //   }, 10000);
 }
   /*--------------------------------------------
     parallax
@@ -1401,7 +1035,7 @@ function parallax() {
     var rellax = new Rellax('.rellax');
 }
   /*--------------------------------------------
-    works masnory
+    works masonry
 ---------------------------------------------*/
 function gridWorks(){
     var $gridt = $('.works');
@@ -1424,30 +1058,15 @@ function swiperCaseStudy() {
     var padding = $('.wrap-lines.container').width();
     var body = $('body').width();
     var linesOutsideContainer = (body / 2) - (padding / 2);
-    // $('.swiper-container').css('margin-left', (linesOutsideContainer)-2);
-    // $('.swiper-container').css('margin-right', (linesOutsideContainer)+4);
-
     var swiper = new Swiper('.swiper-container', {
         slidesPerView:  1,
-        // slidesPerColumn: 1,
-        //grabCursor: true,
         spaceBetween: 30,
         keyboardControl: true,
-        //centeredSlides: true,
-        //width: 1080,
-
-        //centerSlidesBounds: true,
-        //slidesPerGroupSkip: 1,
-        //slidesPerGroup: 1,
-        // loop: false,
-        // loopFillGroupWithBlank: true,
-        //slidesOffsetBefore: 0,
         keyboard: {
             enabled: true
         },
         pagination: {
             el: '.swiper-pagination',
-            // bulletClass: 'hoverable',
             clickable: true,
         },
         navigation: {
@@ -1455,17 +1074,6 @@ function swiperCaseStudy() {
             prevEl: '.swiper-button-prev',
         },
     });
-
-    //swiper.width
-
-    // swiper.on('setTranslate', function () {
-    //     // swiper.slides[1].css('translate3d', 0, 0 ,0)
-    //   });
-
-    // swiper.slides[1].on('setTranslate', function(){
-    //     this.css('translate3d', 0, 0 ,0);
-    // });
-
 }
   /*--------------------------------------------
     img full-width case study
@@ -1500,7 +1108,6 @@ function countAbout() {
                 easing:'linear',
                 step: function() {
                     $this.text(Math.floor(this.countNum));
-                    // $(window).off("scroll");
                 },
                 complete: function() {
                     $this.text(this.countNum);
@@ -1522,12 +1129,7 @@ $(document).ready(function() {
     titleNav();
     introLetters();
     caseStudies();
-    // caseStudiesSlider();
-    // workSlider2();
-    // workSlider4();
-    slider5();
-    // scrollReveal();
-    // scrollPerso();
+    caseStudiesSlider();
     goToTop();
     contactForm();
     headerContact();
@@ -1543,6 +1145,5 @@ $(document).ready(function() {
 $(window).resize(function() {
     lines();
   });
-
 
 });
