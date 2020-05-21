@@ -1,8 +1,10 @@
 import $ from 'jQuery';
 import 'bootstrap';
+import Swiper from '../js/plugins';
 
 
  require('../sass/main.scss');
+
 
  jQuery(function($) {
 
@@ -1135,11 +1137,15 @@ $(document).ready(function() {
     headerContact();
     parallax();
     confirmContact();
-    gridWorks();
+    // gridWorks();
     swiperCaseStudy();
     imgPosition();
     countAbout();
     titleOpacity();
+});
+
+$(window).on('load', function(){
+    gridWorks();
 });
 
 $(window).resize(function() {

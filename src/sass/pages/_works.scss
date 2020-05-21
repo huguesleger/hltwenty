@@ -56,6 +56,9 @@
             }
         }
     }
+    .grid-item {
+        display: block;
+    }
     .grid-item:hover .work-color {
         transform: translateY(0);
     }
