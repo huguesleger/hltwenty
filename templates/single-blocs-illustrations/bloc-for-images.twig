@@ -1,0 +1,25 @@
+<div class="single section bloc-4-images-illustation">
+    <div class="half-line before-lines"></div>
+    <div class="wrap-lines container">
+        <div class="row no-gutters">
+            <div class="col-3 liner"></div>
+            <div class="col-3 liner"></div>
+            <div class="col-3 liner"></div>
+            <div class="col-3 liner"></div>
+        </div>
+    </div>
+    <div class="half-line after-lines"></div>
+    <div class="container">
+    <div class="row">
+        {% for inline_image in bloc.inline_images %}
+        <div class="col-md-3">
+            <a class="illu-popup hoverable" href="{{ inline_image.image }}">
+                <div class="hover-illu-popup"></div>
+                <div class="hover-icon"><span class="icon-zoom"></span></div>
+                <img class="img-fluid" src="{{ inline_image.image }}" alt="" />
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+    </div>
+</div>

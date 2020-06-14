@@ -34,6 +34,29 @@
     }
 }
 
+.anim-slide-y-error {
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-name: slide-y-error;
+    animation-name: slide-y-error;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes slide-y-error {
+    0% {
+        -webkit-transform: translate(-50%, -10px);
+        transform: translate(-50%, -10px);
+    }
+
+    100% {
+        -webkit-transform: translate(-50%, 10px);
+        transform: translate(-50%, 10px);
+    }
+}
+
 .anim-slide-x {
     -webkit-animation-duration: 3s;
     animation-duration: 3s;

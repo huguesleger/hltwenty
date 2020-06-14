@@ -1,5 +1,35 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	Sorry, we couldn't find what you're looking for.
+	<div class="page-error">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="txt-404">404</div>
+						<div class="wrap-elements">
+							<span class="element element-1 c"></span>
+							<span class="element element-3 c-line"></span>
+							<span class="element element-4 c-line-color"></span>
+							<span class="element element-5 t t-color-top"></span>
+							<span class="element element-6 r anim-slide-y anim-delay-2s"></span>
+							<span class="element element-7 r-color anim-slide-y"></span>
+							<span class="element element-8 r-line anim-pulse"></span>
+							<span class="element element-9 l l-color-top anim-slide-x"></span>
+							<span class="element element-10 l-large l-large-color anim-slide-x anim-delay-2s"></span>
+							<span class="element element-11 more"></span>
+							<span class="element element-12 x"></span>
+						</div>
+					<div class="wrap-perso">
+						<div class="perso-error anim-slide-y-error"></div>
+						<div class="ombre-perso-error anim-slide-y-error anim-delay-2s"></div>
+						<div class="desc-error">
+							<h2>Oops!</h2>
+							<p>Cette page n'existe pas</p>
+							<a href="javascript:;" class="btn btn-sm btn-primary btn-round btn-effect hoverable" onclick="history.go(-1)">Retour</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 {% endblock %}

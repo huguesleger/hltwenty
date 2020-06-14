@@ -91,20 +91,20 @@ class StarterSite extends Timber\Site {
 
   	$args = array(
   		'labels'             => $labels,
-      'description'        => __( 'Description.', 'your-plugin-textdomain' ),
+      	'description'        => __( 'Description.', 'your-plugin-textdomain' ),
 		'public'             => true,
   		'publicly_queryable' => true,
   		'show_ui'            => true,
   		'show_in_menu'       => true,
-      'show_in_rest'       => true,
+      	'show_in_rest'       => true,
   		'query_var'          => true,
 		'rewrite'            => array( 'slug' => 'case-study' ),
   		'capability_type'    => 'post',
-      'menu_icon'          => 'dashicons-images-alt2',
+      	'menu_icon'          => 'dashicons-images-alt2',
   		'has_archive'        => false,
-  		'hierarchical'       => false,
+  		'hierarchical'       => true,
   		'menu_position'      => 5,
-  		'supports'           => array( 'title', 'editor', 'author', 'excerpt', 'thumbnail','revisions'),
+  		'supports'           => array( 'title', 'editor', 'author', 'excerpt', 'thumbnail','revisions','page-attributes'),
   	);
 
   	register_post_type( 'case-study', $args );
@@ -266,7 +266,8 @@ class StarterSite extends Timber\Site {
 * Enqueue Font awesome
 */
 function hl2020_enqueue_fontawesome() {
-  wp_enqueue_script( 'fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/js/all.min.js', array(), true );
+//    wp_enqueue_script( 'fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/js/all.min.js', array(), true );
+   wp_enqueue_style('fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css', array(), true);
 }
 add_action( 'wp_enqueue_scripts', 'hl2020_enqueue_fontawesome', 10 );
 
@@ -277,14 +278,13 @@ function header_scripts()  {
 add_action( 'wp_enqueue_scripts', 'header_scripts' );
 
 function footer_scripts()  { 
-wp_enqueue_script( 'hltwentyprogressbar', 'https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/1.0.1/progressbar.min.js', array('jquery'), '', true );
-wp_enqueue_script( 'hltwentyrellax', 'https://cdnjs.cloudflare.com/ajax/libs/rellax/1.10.0/rellax.min.js', array('jquery'), '', true );		
 wp_enqueue_script( 'hltwentytweenmax', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js', array('jquery'), '', true );
+wp_enqueue_script( 'hltwentytxtplugin', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/plugins/TextPlugin.min.js', array('jquery'), '', true);
 wp_enqueue_script( 'hltwentytimelinemax', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js', array('jquery'), '', true );
+wp_enqueue_script( 'hltwentyrellax', get_template_directory_uri() . '/public/js/rellax.js');
+wp_enqueue_script( 'hltwentyreveal', get_template_directory_uri() . '/public/js/scrollReveal.js');
 wp_enqueue_script( 'hltwentyplugins', get_template_directory_uri() . '/public/js/plugins.js');
 wp_enqueue_script( 'hltwentyscript', get_template_directory_uri() . '/public/js/script.js');
-
-//   wp_enqueue_script( 'app.bundle', get_template_directory_uri() . '/dist/js/app.bundle.js'); 
 }
 add_action( 'wp_footer', 'footer_scripts' );
 

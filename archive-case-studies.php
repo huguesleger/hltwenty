@@ -48,8 +48,10 @@ $context['posts'] = new Timber\PostQuery($podargs);
 $timber_post     = new Timber\Post();
 $timber_terms = Timber::get_terms('case-study-type');
 $context['categories'] = $timber_terms;
+$custom_number = wp_count_posts('case-study')->publish;
+$context['custom_number'] = $custom_number;
 $context['post'] = $timber_post;
 
 
-Timber::render( $templates, $context );
+Timber::render( $templates, $context, $custom_number);
 

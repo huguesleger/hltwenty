@@ -60,7 +60,6 @@
 					<div class="loader-logo"></div>
 				</div>
 			</div>
-			<h1 class="loader-title text-center mb-0">HL Developerz</h1>
 		</div>
 	</div>
 	{% endblock %}
@@ -76,16 +75,30 @@
 			</div>
 		</header>
 		<nav id="nav-main" class="main" role="navigation">
-			<div class="half-line before-lines"></div>
-			<div class="wrap-lines container">
-				<div class="row no-gutters">
-					<div class="col-3 liner"></div>
-					<div class="col-3 liner"></div>
-					<div class="col-3 liner"></div>
-					<div class="col-3 liner"></div>
+			<div class="wrap-grid expanded">
+				<div class="half-line before-lines">
+					<div class="cover-segment"></div>
+				</div>
+				<div class="wrap-lines container">
+					<div class="row no-gutters">
+						<div class="col-3 liner">
+							<div class="cover-segment"></div>
+						</div>
+						<div class="col-3 liner">
+							<div class="cover-segment"></div>
+						</div>
+						<div class="col-3 liner">
+							<div class="cover-segment"></div>
+						</div>
+						<div class="col-3 liner">
+							<div class="cover-segment"></div>
+						</div>
+					</div>
+				</div>
+				<div class="half-line after-lines">
+					<div class="cover-segment"></div>
 				</div>
 			</div>
-			<div class="half-line after-lines"></div>
 				<div class="container px-0">
 					{% include "menu.twig" with {'items': menu.get_items} %}
 				</div>

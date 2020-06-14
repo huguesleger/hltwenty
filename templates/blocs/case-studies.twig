@@ -23,7 +23,7 @@
     </div>
 </div>
 <div class="half-line after-lines"></div>
-<div class="container">
+<div class="container reveal">
     <div class="row">
         <div class="col-md-12 p-0">
             <div class="section-infos">
@@ -62,7 +62,7 @@
         <p>{{ item.post.terms('case-study-type')|join(', ') }}</p> #}
 
 
-    <div id="caseStudiesSlider" class="case-studies-slider">
+    <div id="caseStudiesSlider" class="case-studies-slider reveal">
     <div class="container wrap-studies-slider p-0">
     {% for i, item in bloc.items %}
         <div class="item-case-study {% if loop.first %}is-active{% endif %}">  
@@ -73,12 +73,9 @@
                             <div class="wrap-elements">
                                 <span class="element element-1 c"></span>
                                 <span class="element element-3 c-line"></span>
-                                <span class="element element-4 c-line-blue"></span>
                                 <span class="element element-5 t"></span>
-                                <span class="element element-7 r-blue"></span>
-                                <span class="element element-8 r-line"></span>
-                                <span class="element element-9 l"></span>
-                                <span class="element element-10 l-large-blue"></span>
+                                <span class="element element-8 r-line anim-pulse"></span>
+                                <span class="element element-9 l anim-slide-x"></span>
                                 <span class="element element-11 more"></span>
                                 <span class="element element-12 x"></span>
                             </div>
@@ -96,7 +93,7 @@
                                 </div>
                             </div>
                             <div class="case-study-desc">
-                                <div class="case-study-excerpt">{{ item.post.post_excerpt }}</div>
+                                <div class="case-study-excerpt">{{ item.post.post_excerpt| truncate(8) }}</div>
                                 <div class="case-study-link"><a class="hoverable"
                                         data-cursor-text="view" href="{{ item.post.link }}">View Case
                                         <span></span></a></div>
@@ -107,15 +104,32 @@
             </div>
         </div>
         {% endfor %}
-        <div class="case-study-bullets">
+        {# <div class="case-study-bullets">
             {% for i, item in bloc.items %}
                 {% set number = i + 1 %}
                 <div class="study-bullet {% if loop.first %}is-active{% endif %}">
                 <span class="bullet-number">0{{number}}</span>
                 <span class="bullet-line"></span>
-                {# <span>{{ item.post.post_title }}</span> #}
                 </div>
             {% endfor %}
+        </div> #}
+
+        <div class="case-study-bullets">
+        {% for i, item in bloc.items %}
+        {% set number = i + 1 %}
+            {% if loop.first %}
+                <div class="bullet-number-first go-prev hoverable" data-cursor-text="prev">0{{number}}</div>
+             {% endif %}
+        {% endfor %}
+            <div class="bullet-bar">
+                <div class="bar-line"></div>
+            </div>
+        {% for i, item in bloc.items %}
+        {% set number = i + 1 %}
+            {% if loop.last %}
+                <div class="bullet-number-last go-next hoverable" data-cursor-text="next">0{{number}}</div>
+            {% endif %}
+         {% endfor %}    
         </div>
 
     </div>

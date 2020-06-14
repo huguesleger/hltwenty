@@ -18,9 +18,9 @@
 			<div class="row">
 				<div class="col-12">
 					<div class="wrap-btn-filter mb-5 text-center">
-						<button class="btn-filter hoverable active" data-filter="*">all</button>
+						<button class="btn-filter hoverable active" data-filter="*" data-toggle="tooltip" data-trigger="hover" data-placement="top" title="{{custom_number}}">all</button>
 						{% for category in categories %}
-						<button class="btn-filter hoverable" data-filter=".{{category.name}}">{{category.name}}</button>
+						<button class="btn-filter hoverable" data-filter=".{{category.name}}" data-toggle="tooltip" data-trigger="hover" data-placement="top" title="{{category.count}}">{{category.name}}</button>
 						{% endfor %}
 					</div>
 				</div>

@@ -11,53 +11,21 @@
         </div>
     </div>
     <div class="half-line after-lines"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 p-0">
-                <div class="section-infos">
-                    <h3 class="section-title">{{ bloc.titre }}</h3>
-                </div>
-            </div>
-            {% for texte in bloc.textes %}
-            <div class="col-md-3 pl-0">
-                <i class="icon-color fas {{ texte.icon }}"></i>
-                <h4 class="h4 mb-3">{{ texte.titre_bloc }}</h4>
-                <p>{{ texte.description_bloc }}</p>
-            </div>
-            {% endfor %}
-        </div>
-        {# <div class="row">
-            <div class="col-md-6">
-                <img class="img-fluid" src="wp-content/themes/hltwenty/assets/apropos.jpg" />
-            </div>
-        </div> #}
-    </div>
-</section>
-    {# <div class="graphisme-img">
-        <div class="half-line before-lines"></div>
-        <div class="wrap-lines container">
-            <div class="row no-gutters">
-                <div class="col-3 liner"></div>
-                <div class="col-3 liner"></div>
-                <div class="col-3 liner"></div>
-                <div class="col-3 liner"></div>
-            </div>
-        </div>
-        <div class="half-line after-lines"></div>
-        <div class="container">
+        <div class="container reveal">
             <div class="row">
-                <div class="col-md-6">
-                    <h4>Create is cool</h4>
-                </div>
-                <div class="col-md-4 offset-md-2 p-0">
-                    <div class="perso">
-                        <div class="element-perso perso-caps is-move"></div>
-                        <div class="element-perso perso-head-3 is-move"></div>
-                        <div class="element-perso perso-head-2 is-move"></div>
-                        <div class="element-perso perso-head-1 is-move"></div>
-                        <div class="element-perso perso-botttom is-move"></div>
+                <div class="col-md-12 p-0">
+                    <div class="section-infos">
+                        <h3 class="section-title">{{ bloc.titre }}</h3>
                     </div>
                 </div>
+                {% for texte in bloc.textes %}
+                <div class="col-md-3 pl-0">
+                    <i class="icon-color fas {{ texte.icon }}"></i>
+                    <h4 class="h4 mb-3">{{ texte.titre_bloc }}</h4>
+                    <p>{{ texte.description_bloc }}</p>
+                </div>
+                {% endfor %}
             </div>
         </div>
-    </div> #}
+</section>
+

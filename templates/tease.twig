@@ -17,7 +17,7 @@
 			{% endif %}
 		<div class="work-desc">
 		<h3>{{post.title}}</h3>
-		<span>{{ post.post_excerpt }}</span>
+		<span>{{ post.post_excerpt| truncate(10) }}</span>
 		</div>	
 		</div>
 	</a>

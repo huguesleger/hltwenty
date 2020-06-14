@@ -55,19 +55,25 @@
   </div>
 </section> #}
 
-{# <section class="hero-page page-case-study">
+{# {{ dump(post) }} #}
+{% if post.header == true %}
+<section class="hero-page page-case-study">
   <div class="hero-content" data-position="{{ post.position }}" style="background-image: url('{{ post.thumbnail.src }}')">
   </div>
   <div class="hero-title rellax" data-rellax-speed="3">
     <h1 class="mb-0">{{post.title}}</h1>
-    <p class="header-subtitle">{{post.subtitle}}</p>
+    {# <p class="header-subtitle">{{post.subtitle}}</p> #}
   </div>
-</section> #}
+  <div class="btn-sroll-content">
+  	<a class="goto-link hoverable" href="#content"><i class="fas fa-arrow-down"></i></a>
+  </div>
+</section>
+{% endif %}
 
 {% set blocs = post.meta('single_blocs') %}
 {# {{ dump(post) }} #}
 
-<div class="case-study">
+<div class="case-study" id="content">
 {% for i, bloc in blocs %}
     {% include('single-blocs/' ~ bloc.acf_fc_layout ~ '.twig')%}
 {% endfor %}

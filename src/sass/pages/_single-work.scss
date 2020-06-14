@@ -7,6 +7,7 @@
     .hero-content {
         height: 100vh;
         position: relative;
+        z-index: 1;
         &::before {
             content:'';
             position: absolute;
@@ -14,7 +15,29 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    }
+    .hero-title {
+        z-index: 1;
+    }
+    .btn-sroll-content {
+        position: absolute;
+        width: 100%;
+        bottom: 50px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        z-index: 1;
+        .goto-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            background-color: $color_primary;
         }
     }
 }
@@ -65,6 +88,7 @@
 // ==================
 .detail-case-study {
     padding: 8rem 0 5rem 0;
+    position: inherit;
     .detail-desc {
         font-family: $font_renogare;
         margin-bottom: 6rem;
@@ -430,5 +454,8 @@ margin: 0 5px;
         .prev-case-study {
             margin-bottom: 2rem;
         }
+    }
+    .img-full-width-case-study.rellax {
+        transform: translate3d(0, 0, 0) !important;
     }
 }

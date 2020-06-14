@@ -1,5 +1,7 @@
 import $ from 'jQuery';
 import 'bootstrap';
+import Rellax from '../js/rellax';
+import ScrollReveal from '../js/scrollReveal';
 import Swiper from '../js/plugins';
 
 
@@ -62,7 +64,6 @@ function onMouseHover(t) {
         $(".circle-cursor--view").text("");
         $('.circle-cursor--view').text($(t.target).data("cursor-text"));
 
-    
 }
 function onMouseHoverOut() {
     TweenMax.to(bigBall, .3, {
@@ -108,7 +109,8 @@ function onLoad() {
   updateScroller();  
   window.focus();
   window.addEventListener("resize", onResize);
-  document.addEventListener("scroll", onScroll); 
+  document.addEventListener("scroll", onScroll);
+  document.addEventListener("click", onClick);  
 }
 
 function updateScroller() {
@@ -176,6 +178,7 @@ function onScroll() {
   if (!requestId) {
     requestId = requestAnimationFrame(updateScroller);
   }
+  $('[data-toggle="tooltip"]').tooltip('hide'); 
 }
 
 function onResize() {
@@ -185,6 +188,14 @@ function onResize() {
   }
 }
 
+function onClick() {
+    scroller.resizeRequest++;
+    $('.btn-filter').on('click', function(){
+        if (!requestId) {
+            requestId = requestAnimationFrame(updateScroller);
+          }
+      });
+}
 }
 /*--------------------------------------------
     Lines
@@ -192,7 +203,7 @@ function onResize() {
 function lines() {
     var containerLines = $('.wrap-lines.container').width();
     var body = $('body').width();
-    var linesOutsideContainer = (body / 2) - (containerLines / 2);
+    var linesOutsideContainer = (body / 2) - (containerLines/ 2);
     $('.half-line').css('width', (linesOutsideContainer));
 }
 /*--------------------------------------------
@@ -210,12 +221,6 @@ function loader(){
         y:50,
         ease:Expo.easeOut
     }, "0.25")
-    .from(".loader-title",.6, {
-        transformOrigin:"50% 50%",
-        autoAlpha:0,
-        y:50,
-        ease:Expo.easeOut
-    }, "0.75")
     .fromTo(".circle-line", 2, {
         opacity: 0,
         rotation:0,
@@ -254,6 +259,9 @@ function navigation(){
     $('.btn-main').on('click', function (e) {
     e.preventDefault();
     $('.main').toggleClass('is-open');
+    // effet-menu-grid
+    $('.wrap-grid').addClass('is-active')
+
     $('body').toggleClass('overflow-hidden');
     $('.logo .title-site').toggleClass('dark');
     $('.main-item .item').mouseenter(function(){
@@ -266,12 +274,13 @@ function navigation(){
         $('.logo .title-site').css('transition-delay','0.4s');
         setTimeout(function(){
             $('.btn-main').addClass('is-open');
-        }, 400); 
+        }, 400);
     }else {
          $('.logo .title-site').css('transition-delay','0.8s');
                  setTimeout(function(){
             $('.btn-main').removeClass('is-open');
         }, 800); 
+        $('.wrap-grid').removeClass('is-active');
     }
 });
 }
@@ -487,7 +496,7 @@ background: 'transparent'
         opacity: 0,
         y: "-10px",
         ease: E
-    }, "+=2.2").to(r.find(".words1"), .4, {
+    }, "+=0.5").to(r.find(".words1"), .4, {
         width: g + "px"
     }).set(r.find(".words1 .word-2"), {
         display: "block",
@@ -513,7 +522,7 @@ background: 'transparent'
         opacity: 0,
         y: "-10px",
         ease: E   
-    }, "+=2.2").to(r.find(".words1"), .4, {
+    }, "+=0.5").to(r.find(".words1"), .4, {
         width: _ + "px"  
     }).set(r.find(".words1 .word-3"), {
         display: "block",
@@ -533,7 +542,7 @@ background: 'transparent'
         opacity: 0,
         y: "-10px",
         ease: E
-    }, "+=2.2").to(r.find(".words1"), .4, {
+    }, "+=0.5").to(r.find(".words1"), .4, {
         width: a + "px"
     }).set(r.find(".words1 .word-4"), {
         display: "block",
@@ -556,7 +565,7 @@ background: 'transparent'
         opacity: 0,
         y:"-10px",
         ease: E
-    }, "+=2.2").to(r.find(".words1"), .4, {
+    }, "+=0.5").to(r.find(".words1"), .4, {
         width: u + "px"  
     }).set(r.find(".words1 .word-1"), {
         display: "block",
@@ -575,7 +584,7 @@ background: 'transparent'
     });
 }
  /*--------------------------------------------
-    case studies homepage
+    case studies bg color
 ---------------------------------------------*/ 
 function caseStudies(){
     $('.section .work-left').each(function(){
@@ -598,8 +607,7 @@ var $navPrev = $(".go-prev");
 var $navNext = $(".go-next");
 var $startAutoplay = $(".start-autoplay");
 var $stopAutoplay = $(".stop-autoplay");
-var $lines = $('.bullet-line');
-var $wrapBullet = $('.study-bullet');
+var $lines = $('.bar-line');
 var $wrapTxt = $('.case-study-txt');
 var $slideTitle = $('.case-study-title div');
 var $slideDesc = $('.case-study-desc .case-study-excerpt');
@@ -614,18 +622,19 @@ var autoSlideTimeout;
 var autoSlideDelay = 6000;
 var E = "Power4.easeInOut";
 var C = "Power3.easeOut";
-var numOfSlides = $(".item-case-study").length-1;
+var numOfSlides = $(".item-case-study").length;
 var sliderPosition2 = $('#caseStudiesSlider').innerHeight();
 
-  $(window).on('scroll', function(){
-    if( $(window).scrollTop() >= sliderPosition2 ){
-      $('.case-studies-slider').addClass('is-play');
-      startAutoPlay();
-    } else {
-      $('.case-studies-slider').removeClass('is-play');
-      stopAutoPlay();
-    }
-  });
+//   $(window).on('scroll', function(){
+//     if( $(window).scrollTop() >= sliderPosition2 ){
+//       $('.case-studies-slider').addClass('is-play');
+//       startAutoPlay();
+//     } else {
+//       $('.case-studies-slider').removeClass('is-play');
+//       stopAutoPlay();
+//     }
+//   });
+
 
 
 function init() {
@@ -639,9 +648,6 @@ function init() {
         TweenMax.set($images, {
         opacity: "0",
         y: "20px"
-    });
-        TweenMax.set($lines, {
-		x: "100%"
     });
     TweenMax.set($slideTitle, {
         y: "100%",
@@ -672,7 +678,8 @@ function gotoPrevSlide() {
 		slideToGo = slidesNum - 1;
 	}
     stopAutoPlay();
-	gotoSlide(slideToGo, 1, "prev");
+    startAutoPlay();
+    gotoSlide(slideToGo, 1, "prev");
 }
 
 function gotoNextSlide() {
@@ -680,25 +687,22 @@ function gotoNextSlide() {
 	if (slideToGo >= slidesNum) {
 		slideToGo = 0;
 	}
-     stopAutoPlay();
-	        gotoSlide(slideToGo, 1, "next");
+    stopAutoPlay();
+    startAutoPlay();
+    gotoSlide(slideToGo, 1, "next");
 }
 
 function gotoSlide(slideID, _time, _direction) {
 	if (!isAnimating) {
-		isAnimating = true;
-		prevSlideID = currentSlideID;
-		currentSlideID = slideID;
+        isAnimating = true;
+        prevSlideID = currentSlideID;
+        currentSlideID = slideID;
         var $prevSlide = $slides.eq(prevSlideID);
         var $currentSlide = $slides.eq(currentSlideID);
         var $prevOverlay   = $overlays.eq(prevSlideID);
         var $currentOverlay = $overlays.eq(currentSlideID);
         var $prevImg   = $images.eq(prevSlideID);
         var $currentImg = $images.eq(currentSlideID);
-        var $prevLine = $lines.eq(prevSlideID);
-        var $currentLine = $lines.eq(currentSlideID);
-        var $prevBullet = $wrapBullet.eq(prevSlideID);
-        var $currentBullet = $wrapBullet.eq(currentSlideID);
         var $prevTxt = $wrapTxt.eq(prevSlideID);
         var $currentTxt = $wrapTxt.eq(currentSlideID);
         var $prevTitle = $slideTitle.eq(prevSlideID);
@@ -711,11 +715,11 @@ function gotoSlide(slideID, _time, _direction) {
         var $currentElement = $elements.eq(currentSlideID);
         $prevSlide.removeClass('is-active');
         $currentSlide.addClass('is-active');
-        $prevBullet.removeClass('is-active');
-        $currentBullet.addClass('is-active');
         $prevTxt.removeClass('is-active');
         $currentTxt.addClass('is-active');
-		var time = 1;
+        var numberSlide = '0'+(slideID +1);
+        var numberSlideString = numberSlide.toString();
+        var time = 1;
 		if (_time !== null) {
 			time = _time;
 		}
@@ -723,7 +727,7 @@ function gotoSlide(slideID, _time, _direction) {
 		if (_direction != null) {
 			direction = _direction;
 		}
-		if (direction == "next") {
+		if (direction == "next" || direction == "prev") {
             var tl = new TimelineMax({repeat:0});
 
             TweenMax.to($prevOverlay, 0.8, {
@@ -770,29 +774,22 @@ function gotoSlide(slideID, _time, _direction) {
                 y: "0",
                 delay: 3.6,
             });
-            TweenMax.to($prevLine, 0.5, {
-                x: "100%",
-                ease: E
+            TweenMax.to(".bar-line", 0.5, {
+                scaleY: (slideID +1) / numOfSlides,
+                ease: E,
+                // delay: 1,
             });
-            TweenMax.fromTo($currentLine, 0.5, {
-                x: "100%",
+            TweenMax.fromTo("bar-line", 0.5, {
+                scaleY: (slideID) / numOfSlides,
                 ease: C
             }, {
-                x : "0%",
-                delay: 3,
+                scaleY: (slideID +1) / numOfSlides,
                 ease: C  
             });
-            TweenMax.to($prevBullet, 0.5, {
-                opacity: "0.4",
-                ease: E
-            });
-            TweenMax.fromTo($currentBullet, 0.5, {
-                opacity: "0.4",
-                ease: C
-            }, {
-                opacity : "1",
-                delay: 3,
-                ease: C  
+            TweenMax.to(".bullet-number-first", 0.5, {
+                text: numberSlideString,
+                ease: E,
+                // delay: 1,
             });
             TweenMax.to($prevTxt, 0.5, {
                 zIndex: "0"
@@ -847,8 +844,7 @@ function gotoSlide(slideID, _time, _direction) {
                 delay: 3.8,
                 ease: E  
             });
-
-		}
+        }
 		TweenLite.delayedCall(time, function() {
             isAnimating = false;
         });
@@ -876,95 +872,8 @@ function stopAutoPlay() {
 	TweenLite.killDelayedCallsTo(play);
 }
     init();
+    startAutoPlay();
 }
-  /*--------------------------------------------
-    scroll reveal
----------------------------------------------*/
-// function scrollReveal() {
-//   window.sr = ScrollReveal();
-//   sr.reveal('.perso', {
-//     duration   : 600,
-//     distance   : '60px',
-//     easing     : 'ease-out',
-//     origin     : 'bottom',
-//     reset      : true,
-//     scale      : 1,
-//     viewFactor : 0,
-//     afterReveal  : function() {
-//         revealChildren,
-//     $(".element-perso").addClass("is-move");
-//   }
-//   }, 150);
-  
-//     var revealChildren = sr.reveal('.perso-head-1, .perso-head-2, .perso-head-3', {
-//     duration   : 500,
-//     scale      : 1,
-//     distance   : '60px',
-//     origin     : 'bottom',
-//     reset      : true,
-//     easing     : 'ease-out',
-//     viewFactor : 1,
-//   }, 75);
-
-
-// };
-
-  /*--------------------------------------------
-    scrollPerso
----------------------------------------------*/ 
-// function scrollPerso(){
-				
-// 	//Parallax & fade on scroll	
-//     //     var perso = $('.graphisme-img').innerHeight();
-// 	//   $(document).on('scroll', function(){
-//     //     if( $(document).scrollTop() >= perso ){
-//     //   $('.element-perso').addClass('is-move');
-//     // } else {
-//     //   $('.element-perso').removeClass('is-move');
-//     // }
-//     //   }); 
- 
-// // $(document).on('scroll', function() {
-// //     var header = $('.element-perso');
-// // var hieghtThreshold = $(".section-graphisme").offset().top + 100 ;
-// // var hieghtThreshold_end  = $(".section-graphisme").offset().top + $(".section-graphisme").height() ;
-// //     var scroll = $(window).scrollTop();
-
-// //     if (scroll >= hieghtThreshold  && scroll <=  hieghtThreshold_end ) {
-// //         header.addClass('is-move');
-// //     } else {
-// //         header.removeClass('is-move');
-// //     }
-// //   });
-
-
-
-// /*! Scroll Reveal Animations */
-// window.sr = ScrollReveal();
-
-
-
-// 	/* Scroll Animation */
-// 	  sr.reveal('.perso', {
-//     duration   : 2000,
-//     distance   : '100%',
-//     easing     : 'ease-out',
-//     origin     : 'bottom',
-//     reset      : true,
-//     viewFactor : 0,
-//     afterReveal  : revealChildren,
-//   }, 650);
-
-//       var revealChildren = sr.reveal('.perso-head-1, .perso-head-2, .perso-head-3, .perso-bottom, .perso-caps', {
-//     duration   : 2000,
-//     distance   : '100%',
-//     origin     : 'bottom',
-//     reset      : true,
-//     viewFactor : 1,
-//     easing     : 'ease-out',
-//   }, 675);
-
-// }
   /*--------------------------------------------
     go top
 ---------------------------------------------*/ 
@@ -1027,7 +936,7 @@ function titleOpacity() {
 function confirmContact() {
     if ($('.contact-me div').hasClass('wpforms-confirmation-container-full')){
        $('.contact-me').addClass('no-shadow');
-       $('.contact-me').append($('<div class="send-email animated infinite pulse delay-2s slower"></div>'));
+       $('.contact-me').append($('<div class="send-email anim-pulse"></div>'));
     }
 }
   /*--------------------------------------------
@@ -1054,6 +963,12 @@ function gridWorks(){
     });
 }
   /*--------------------------------------------
+    tooltip number works categories filter case-studies
+---------------------------------------------*/
+function tooltipNumberWorks(){
+        $('[data-toggle="tooltip"]').tooltip();
+} 
+  /*--------------------------------------------
     swiper slider case study
 ---------------------------------------------*/
 function swiperCaseStudy() {
@@ -1064,6 +979,10 @@ function swiperCaseStudy() {
         slidesPerView:  1,
         spaceBetween: 30,
         keyboardControl: true,
+        // autoplay: {
+        //     delay: 2500,
+        //     disableOnInteraction: true,
+        //   },
         keyboard: {
             enabled: true
         },
@@ -1076,6 +995,15 @@ function swiperCaseStudy() {
             prevEl: '.swiper-button-prev',
         },
     });
+    // var mySwiper = document.querySelector('.swiper-container').swiper
+
+    // $(".swiper-container").mouseenter(function() {
+    //     mySwiper.autoplay.stop();
+    //   });
+    
+    //   $(".swiper-container").mouseleave(function() {
+    //     mySwiper.autoplay.start();
+    //   });
 }
   /*--------------------------------------------
     img full-width case study
@@ -1120,6 +1048,67 @@ function countAbout() {
         });
   }
 /*--------------------------------------------
+    enter content case study
+---------------------------------------------*/
+function enterContentCaseStudy(){
+    $('.goto-link').on('click', function(){
+      $('html, body').animate({scrollTop: $(this.hash).offset().top}, 800);
+      return false;
+    });
+  }
+/*--------------------------------------------
+    magnific popup case study illustration
+---------------------------------------------*/
+function magnificPopupIllustration() {
+	$('.illu-popup').magnificPopup({
+        tClose: '',
+        type: 'image',
+        mainClass: 'mfp-with-zoom', // this class is for CSS animation below
+        // closeBtnInside: false,
+        callbacks: {
+            open: function() {
+                $('button').addClass('hoverable');
+            },
+        },
+        gallery: {
+          tPrev: '',
+          tNext: '',
+          // options for gallery
+          enabled: true
+        },
+        zoom: {
+          enabled: true, // By default it's false, so don't forget to enable it
+          duration: 800, // duration of the effect, in milliseconds
+          easing: 'cubic-bezier(.86, 0, .07, 1)', // CSS transition easing function
+          // The "opener" function should return the element from which popup will be zoomed in
+          // and to which popup will be scaled down
+          // By defailt it looks for an image tag:
+          opener: function(openerElement) {
+                // openerElement is the element on which popup was initialized, in this case its <a> tag
+                // you don't need to add "opener" option if this code matches your needs, it's defailt one.
+                return openerElement.is('img') ? openerElement : openerElement.find('img');
+          }
+        }
+  });
+}
+  /*--------------------------------------------
+    scroll reveal
+---------------------------------------------*/
+function scrollReveal() {
+    window.sr = ScrollReveal();
+  sr.reveal('.reveal', {
+      duration   : 800,
+      delay      : 600,
+      distance   : '90px',
+      easing     : 'ease-in-out',
+      origin     : 'bottom',
+      reset      : false,
+      opacity    : 0,
+      scale      : 1,
+      viewFactor : 0,
+  });
+  };
+/*--------------------------------------------
     load function
 ---------------------------------------------*/ 
 $(document).ready(function() {
@@ -1137,11 +1126,14 @@ $(document).ready(function() {
     headerContact();
     parallax();
     confirmContact();
-    // gridWorks();
     swiperCaseStudy();
     imgPosition();
     countAbout();
     titleOpacity();
+    enterContentCaseStudy();
+    magnificPopupIllustration();
+    tooltipNumberWorks();
+    scrollReveal();
 });
 
 $(window).on('load', function(){

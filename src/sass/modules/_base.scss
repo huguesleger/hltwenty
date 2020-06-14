@@ -42,7 +42,8 @@ button {
 
 .scroll-content::-webkit-scrollbar
 {
-	width: 6px;
+    // width: 6px;
+    width: 0;
     background-color: #F5F5F5;
 }
 
@@ -63,6 +64,15 @@ button {
 }
 .bg-grey-light {
     background-color: #f1f1f1;
+}
+
+// tooltip
+// ==================
+.tooltip-inner {
+    background-color: $color_primary;
+}
+.bs-tooltip-top .arrow::before, .bs-tooltip-auto[x-placement^="top"] .arrow::before {
+    border-top-color: $color_primary;
 }
 
 @include maxwidth(sm) {

@@ -173,6 +173,31 @@
           margin-top: 5px;
         }
     }
+    // new bullets vertical
+    .case-study-bullets {
+      .bullet-bar {
+        width: 1px;
+        height: 150px;
+        background-color: #dcdcdc;
+        margin: 0 auto;
+        position: relative;
+        .bar-line {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 1px;
+          height: 100%;
+          background-color: $grey_dark;
+          transform-origin: top center;
+        }
+      }
+      .go-prev, .go-next {
+        transition: color 0.2s ease-in-out;
+      }
+      .go-prev:hover, .go-next:hover {
+        color: $color_primary;
+      }
+    }
 }
 
 @include maxwidth(sm) {

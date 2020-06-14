@@ -1,0 +1,58 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+<section class="hero-page page-case-study">
+  <div class="hero-content" data-position="{{ post.position }}" style="background-image: url('{{ post.thumbnail.src }}')">
+  </div>
+  <div class="hero-title rellax" data-rellax-speed="3">
+    <h1 class="mb-0">{{post.title}}</h1>
+  </div>
+  <div class="btn-sroll-content">
+  	<a class="goto-link hoverable" href="#content"><i class="fas fa-arrow-down"></i></a>
+  </div>
+</section>
+
+{% set blocs = post.meta('single_blocs_illustrations') %}
+{# {{ dump(post) }} #}
+
+<div class="case-study-illustration" id="content">
+{% for i, bloc in blocs %}
+    {% include('single-blocs-illustrations/' ~ bloc.acf_fc_layout ~ '.twig')%}
+{% endfor %}
+</div>
+
+<div class="section navigation-case-study">
+    <div class="half-line before-lines"></div>
+    <div class="wrap-lines container">
+        <div class="row no-gutters">
+            <div class="col-3 liner"></div>
+            <div class="col-3 liner"></div>
+            <div class="col-3 liner"></div>
+            <div class="col-3 liner"></div>
+        </div>
+    </div>
+    <div class="half-line after-lines"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 p-0">
+				<div class="{% if post.prev and post.next %}wrap-navigation{% elseif post.prev %}wrap-navigation prev{% elseif post.next %}wrap-navigation next{% endif %}">
+					{% if post.prev %}
+						<div class="prev-case-study">
+							<p>Prev</p>
+							<a class="hoverable" href="{{ post.prev.link }}">{{ post.prev.title }}</a>
+						</div>
+					{% endif %}
+					{% if post.next %}
+						<div class="next-case-study">
+							<p>Next</p>
+							<a class="hoverable" href="{{ post.next.link }}">{{ post.next.title }}</a>
+						</div>		
+					{% endif %}	
+				</div>			
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

@@ -148,12 +148,15 @@
             background: $color_primary;    
         }
     }
-    .l-large-color {
+    .l-large {
         width: 60px;
         height: 2px;
         bottom: 15px;
         right: 210px;
-        background: $color_primary;
+        background: $color_txt;
+        &.l-large-color {
+            background: $color_primary;
+        }
         }
     .more {
         width: 20px;
@@ -189,6 +192,13 @@
 }
 
 @include maxwidth(sm) {
+    .lines-intro {
+        .wrap-lines.container {
+            padding-left: 15px;
+            padding-right: 15px; 
+        }
+        
+    }
     .home-slide--intro {
         padding-left: 15px;
         padding-right: 15px;

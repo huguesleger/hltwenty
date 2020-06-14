@@ -130,11 +130,11 @@ div.wpforms-container-full.wrap-form-contact .wpforms-form {
 
 // message confirm
 .wpforms-confirmation-container-full, div[submit-success] > .wpforms-confirmation-container-full:not(.wpforms-redirection-message) {
-    background: #2ecc71;
+    background: #54eca6;
     border: none;
     margin: 0;
     padding: 1.5rem;
-    color: #fff;
+    border-radius: 4px;
     transition: transform 0.3s ease-in-out;
 }
 .wpforms-confirmation-container-full.is-hide {
@@ -149,4 +149,10 @@ div.wpforms-container-full.wrap-form-contact .wpforms-form {
     margin: auto;
     background-position: top;
     opacity: 0.5;
+}
+
+@include maxwidth(sm) {
+    .hero-contact {
+        margin-bottom: 0;
+    }
 }

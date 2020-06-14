@@ -42,3 +42,12 @@
         background-color: #fff;
     }
 }
+
+@include maxwidth(sm) {
+    .hero-page {
+        .hero-content {
+            height: 100vh;
+            background-position: center !important;
+        }
+    }
+}

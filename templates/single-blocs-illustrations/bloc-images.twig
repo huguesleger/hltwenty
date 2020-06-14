@@ -1,0 +1,23 @@
+<div class="single section bloc-images-illustation">
+    <div class="half-line before-lines"></div>
+    <div class="wrap-lines container">
+        <div class="row no-gutters">
+            <div class="col-3 liner"></div>
+            <div class="col-3 liner"></div>
+            <div class="col-3 liner"></div>
+            <div class="col-3 liner"></div>
+        </div>
+    </div>
+    <div class="half-line after-lines"></div>
+    <div class="container">
+    <div class="row">
+        {% for full_image in bloc.full_images %}
+        <div class="wrap-img-full reveal">
+            <div class="col-md-12 px-0">
+                <img class="img-fluid" src="{{ full_image.image }}" alt="" />
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    </div>
+</div>

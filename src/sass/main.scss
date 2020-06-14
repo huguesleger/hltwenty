@@ -14,10 +14,12 @@
 @import 'modules/base';
 @import 'modules/loader';
 @import 'modules/lines';
+@import 'modules/grid';
 @import 'modules/header';
 @import 'modules/menu';
 @import 'modules/footer';
 @import 'modules/hero';
+@import 'modules/magnific-popup';
 
 // Pages
 // ==================
@@ -26,11 +28,12 @@
 @import 'pages/contact';
 @import 'pages/works';
 @import 'pages/single-work';
+@import 'pages/single-work-illustration';
 @import 'pages/about';
+@import 'pages/404';
 
 // Parts
 // ==================
 @import 'parts/case-studies';
-@import 'parts/graphisme';
 @import 'parts/webdesign';
 

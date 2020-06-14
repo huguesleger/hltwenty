@@ -79,19 +79,9 @@
 }
 
 @include maxwidth(sm) {
-    .sections, .footer, .main, .section, .section-color, .section-dark, .case-study{
+    .sections, .footer, .section, .section-color, .section-dark, .case-study{
         .before-lines, .after-lines, .wrap-lines {
             display: none;
-        }
-    }
-    .lines-intro {
-        .before-lines, .after-lines {
-            display: none;
-        }
-        .wrap-lines {
-            .liner:first-child {
-                border-left: none;
-            }
         }
     }
 }
