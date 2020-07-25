@@ -79,3 +79,18 @@
 .btn-outline-primary.btn-effect::before {
     background-color: $color_primary;
 }
+
+.btn:focus, .btn.focus {
+    box-shadow: none;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: $color_primary;
+    border-color: $color_primary;
+}
+.btn-outline-primary:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active, .show > .btn-outline-primary.dropdown-toggle {
+    color: #fff;
+    background-color: $color_primary;
+    border-color: $color_primary;
+}

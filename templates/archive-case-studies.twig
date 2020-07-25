@@ -2,13 +2,13 @@
 {% extends "index-archive.twig" %}
 
 {% block content %}
-<div class="hero-page page-case-studies bg-grey-light">
-  <div class="hero-content rellax" data-rellax-speed="-2" data-position="{{ post.position }}" style="background-image: url('{{ post.thumbnail.src }}')">
+    <div class="hero-page hero-case-studies">
+    <div class="hero-content rellax" data-rellax-speed="-2" data-position="{{ post.position }}" style="background-image: url('{{ post.thumbnail.src }}')">
+    </div>
+    <div class="hero-title rellax" data-rellax-speed="3">
+      <h1 class="mb-0">{{post.title}}</h1>
+      <p class="header-subtitle">{{post.subtitle}}</p>
+    </div>
   </div>
-  <div class="hero-title rellax" data-rellax-speed="3">
-    <h1 class="mb-0">{{post.title}}</h1>
-    <p class="header-subtitle">{{post.subtitle}}</p>
-  </div>
-</div>
-  {{ parent() }}
+    {{ parent() }}
 {% endblock %}

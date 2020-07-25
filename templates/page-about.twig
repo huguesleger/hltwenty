@@ -3,18 +3,12 @@
 {% block content %}
 
 {% if post.thumbnail.src is defined %}
-<div class="hero-page">
+<div class="hero-page hero-about">
 	<div class="hero-content" data-position="{{ post.position }}"
 		style="background-image: url('{{ post.thumbnail.src }}')"></div>
-	<div class="hero-title">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<h1 class="rellax" data-rellax-speed="3">{{post.title}}</h1>
-				</div>
-        	</div>
-		</div>
-	</div>
+  <div class="hero-title rellax" data-rellax-speed="3">
+    <h1 class="mb-0">{{post.title}}</h1>
+  </div>
 </div>
 {% endif %}
 

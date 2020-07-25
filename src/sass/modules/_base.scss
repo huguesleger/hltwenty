@@ -2,7 +2,7 @@
 // ==================
 body {
     background-color: #fff;
-    touch-action: none;
+    // touch-action: none;
     cursor: none;
     color: $color_txt;
     font-family: $font_montserrat;
@@ -34,7 +34,6 @@ button {
     background-color: #fff;
 }
 
-
 .scroll-content::-webkit-scrollbar-track
 {
     background-color: #F5F5F5;
@@ -57,6 +56,14 @@ button {
     background-color: #666565;
 }
 
+// scroll firefox
+//===================
+.scroll-content {
+    scrollbar-color: #666565 #F5F5F5;
+    scrollbar-width: none;
+}
+
+
 // Color
 // ==================
 .icon-color {
@@ -73,6 +80,18 @@ button {
 }
 .bs-tooltip-top .arrow::before, .bs-tooltip-auto[x-placement^="top"] .arrow::before {
     border-top-color: $color_primary;
+}
+
+@include maxwidth(md) {
+    body {
+      cursor: auto;
+    }
+    .app {
+        position: relative;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+    }
 }
 
 @include maxwidth(sm) {

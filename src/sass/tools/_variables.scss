@@ -8,7 +8,7 @@ $font_icon: 'icomoon';
 // ==================
 $blue: #216BFE;
 $blue_pastel: #8eb4f5;
-$blue_dark : #2A3166;
+// $blue_dark : #2A3166;
 $blue_green_dark: #005d64;
 $blue_green: #00e4a0;
 $blue_caraib: #00e4bc;
@@ -23,8 +23,17 @@ $grey_dark: #131414;
 $grey_light: #9e9e9e;
 $grey_ultralight: #dee2e6;
 
+$blue_night: #3423A6;
+$blue_dark: #171738;
+$blue_neon: #00F0B5;
+$blue_ardoise: #7180B9;
+$blue_grey: #f5f6ff;
+$blue_grey_light: #F1F2F8;
+$blue_gradiant: linear-gradient(180deg, #3423A6, #171738);
+
 $color_primary:$blue_turquoise;
-$color_primary:$red_pastel;
-$color_secondary: #9B1B3B;
-$color_txt: $grey_dark;
+$color_primary:$blue_neon;
+$color_secondary: $blue_night;
+$color_txt: $blue_dark;
 $bg_grey: $grey;
+$bg_dark: $blue_night;

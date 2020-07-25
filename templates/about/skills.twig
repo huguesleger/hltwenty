@@ -1,4 +1,4 @@
-<section class="section-dark skill-about">
+<section class="section-color-dark skill-about">
     <div class="half-line before-lines"></div>
     <div class="wrap-lines container">
         <div class="row no-gutters">
@@ -30,7 +30,7 @@
                 <div class="row row-skill">
             {% endif %}
                     <div class="box-skill">
-                        <img class="img-fluid" src="{{ type.icon }}"></img>
+                        <img class="img-fluid" src="{{ type.icon }}" alt="{{ type.nom }}" />
                         <p class="mb-2">{{ type.nom }}</p>
                         {% if type.pratique == true  %}
                         <span class="badge badge-primary">{{ type.pratique }} %</span>

@@ -1,4 +1,4 @@
-<section class="section-webdesign section-light">
+<section class="section-webdesign section-color-dark">
     <div class="half-line before-lines"></div>
     <div class="wrap-lines container">
         <div class="row no-gutters">
@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-md-12 p-0">
                 <div class="section-infos">
-                    <h3 class="section-title mb-5">{{ bloc.titre }}</h3>
+                    <h3 class="section-title title-white mb-5">{{ bloc.titre }}</h3>
                     <p class="section-desc">{{ bloc.description }}</p>
                 </div>
             </div>
@@ -46,9 +46,9 @@
             </div>
         </div>
     </div>
-    <div class="webdesign-template">
+    <div class="webdesign-template reveal">
         <div class="wrap-template">
-            <img class="img-device" src="{{ bloc.image }}" alt="">
+            <img class="img-device" src="{{ bloc.image }}" alt="{{ bloc.alt }}">
         </div>
     </div>
 </section>

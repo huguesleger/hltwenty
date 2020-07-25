@@ -149,9 +149,22 @@
 
 .bloc-images-illustation {
     .wrap-img-full {
+        padding-top: 6rem;
         margin-bottom: 3rem;
         &:last-child {
             margin-bottom: 0;
         }
     }
+}
+
+.bloc-4-images-illustation + .bloc-images-illustation .wrap-img-full {
+    padding-top: 0;
+}
+
+@include maxwidth(sm) {
+    .bloc-images-illustation {
+        .wrap-img-full {
+            padding-top: 3rem;
+        }
+    }  
 }

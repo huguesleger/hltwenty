@@ -14,7 +14,7 @@
         {% for full_image in bloc.full_images %}
         <div class="wrap-img-full reveal">
             <div class="col-md-12 px-0">
-                <img class="img-fluid" src="{{ full_image.image }}" alt="" />
+                <img class="img-fluid" src="{{ full_image.image }}" alt="{{ bloc.alt }}" />
             </div>
         </div>
         {% endfor %}

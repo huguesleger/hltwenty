@@ -1,13 +1,51 @@
 // Home
 // ==================
 .intro {
-    background-color: $bg_grey;
+    background-color: $bg_dark;
 }
 .home-slide--intro {
     height: 100vh;
     position: relative;
-    -ms-touch-action: none;
-    touch-action: none;
+    // -ms-touch-action: none;
+    // touch-action: none;
+    .scroll-enter {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        opacity: 0;
+        color: #fff;
+        text-align: center;
+        transition: opacity 0.2s ease-in-out;
+            p { 
+                font-size: 0.8rem;
+                margin-bottom: 55px;
+            }
+        .line-enter {
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 1px;
+            height: 50px;
+            transform: translate(-50%);
+            overflow: hidden;
+            z-index: 13;
+            &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                background-color: $color_primary;
+                left: 0;
+                right: auto;
+                top: 0;
+                bottom: auto;
+                width: 100%;
+                height: 100%;
+                transform: translateY(-100%);
+            }
+        }
+    }
     .row {
         text-align: center;
         height: 100vh;
@@ -190,6 +228,13 @@
         }
     }
 }
+@include minmaxwidth(sm, md) {
+    .home-slide--intro {
+        .title-intro {
+            font-size: 5.2rem;
+        }
+    } 
+}
 
 @include maxwidth(sm) {
     .lines-intro {
@@ -202,8 +247,8 @@
     .home-slide--intro {
         padding-left: 15px;
         padding-right: 15px;
-    .title-intro {
-        display: none;
-    }
-} 
+        .title-intro {
+            display: none;
+        }
+    } 
   }

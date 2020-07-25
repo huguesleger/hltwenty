@@ -8,7 +8,6 @@
     font-size: 1.5rem;
 }
 .footer-content {
-    color: #fff;
     padding: 6rem 0;
     &::before {
         content:'';
@@ -31,6 +30,12 @@
         font-size: 2rem;
         transform: translateX(-50%);
     }
+    a:focus {
+        color: $color_primary;
+        border: none;
+        box-shadow: none;
+        outline: none;
+    }
 }
 .footer-wrap-logo {
     display: flex;
@@ -39,7 +44,7 @@
 .footer-logo {
     width: 30px;
     height: 30px;
-    background: url('../images/logo.svg') center center no-repeat;
+    background: url('../images/logo-footer.svg') center center no-repeat;
     background-size: contain;
 }
 .footer-adresse {
@@ -66,17 +71,17 @@
         transform-origin: 0% 50%;
         transition: transform 0.5s;
         transition-timing-function: cubic-bezier(0.2,1,0.3,1);
-        background: #fff;
+        background: $color_primary;
     }
     &:hover{
-        color: #fff;
+        color: $color_primary;
         &::after {
             transform: scale3d(1, 1, 1);   
         }
     }
 }
 .footer-infos-right a:hover {
-    color: #fff;
+    color: $color_primary;
 }
 .footer-infos-right .footer-social{
     min-height: 36px;

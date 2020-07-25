@@ -3,7 +3,7 @@
 
 // header
 // ==================
-.hero-page.page-case-study {
+.hero-page.hero-case-study {
     .hero-content {
         height: 100vh;
         position: relative;
@@ -76,6 +76,8 @@
 // ==================
 .img-full-width-case-study {
     height: 850px;
+    overflow: hidden;
+    position: relative;
     .img-content {
         background-size: cover;
         background-position: 100% 50%;
@@ -94,6 +96,9 @@
         margin-bottom: 6rem;
         h2 {
             font-size: 2.2rem;
+        }
+        span {
+            color: $color_primary;
         }
     }
     .detail-client, .detail-objectif, .detail-intervention {
@@ -115,7 +120,7 @@
         align-items: center;
     }
     .detail-icon {
-        background: $color_txt;
+        background: $color_primary;
         color: #fff;
         padding: 5px;
         border-radius: 50%;

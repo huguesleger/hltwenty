@@ -3,6 +3,7 @@
 .section-webdesign {
     position: relative;
     min-height: 800px;
+    color: #fff;
     .section-infos {
         .section-desc span {
             color: $color_primary;
@@ -36,19 +37,19 @@
         // -moz-box-shadow: 0px 0px 20px -2px rgba(0,0,0,0.54);
         // box-shadow: 0px 0px 20px -2px rgba(0,0,0,0.54);
         &.icon-webdesign {
-            background-image: url('../images/webdesign-red.png');
+            background-image: url('../images/webdesign-blue.png');
             background-size: 42%;
         }
         &.icon-integration {
-            background-image: url('../images/integration-red.png');
+            background-image: url('../images/integration-blue.png');
             background-size: 55%;
         }
         &.icon-responsive {
-            background-image: url('../images/responsive-red.png');
+            background-image: url('../images/responsive-blue.png');
             background-size: 55%;
         }
         &.icon-creative {
-            background-image: url('../images/creative-red.png');
+            background-image: url('../images/creative-blue.png');
             background-size: 30%;
         }
     }

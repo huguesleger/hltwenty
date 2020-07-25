@@ -106,7 +106,7 @@
                   content:'';
                   width: 50px;
                   height: 4px;
-                  background-color: $grey_dark;
+                  background-color: $color_txt;
                   position: absolute;
                   bottom: 0;
               }
@@ -132,12 +132,14 @@
           }
           span {
           margin-left: 10px;
-          background: url('../images/arrow.svg');
-          background-size: cover;
+          background: url('../images/arrow-right.png');
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
           width: 50px;
           height: 45px;
           z-index: 1000;
-          position: absolute;
+          // position: absolute;
           right: -60px;
           transition: 0.3s ease-in-out;
           }
@@ -202,8 +204,9 @@
 
 @include maxwidth(sm) {
   .case-studies-slider {
+    overflow: hidden;
     .wrap-studies-slider {
-      min-height: 910px;
+      min-height: 920px;
     }
     .item-case-study .container .hoverlay-work {
       min-height: 500px;

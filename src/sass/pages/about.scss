@@ -1,14 +1,21 @@
 // About
 // ==================
-.page-template-page-about .title-site {
-    color: $color_txt;
-}
 // hero-page
 // ==================
 .hero-page + .presentation-about {
     padding: 6rem 0;
 } 
-
+.hero-page.hero-about {
+    &::before {
+        content:'';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+}
 // presentation
 // ==================
 .presentation-about {
@@ -33,6 +40,7 @@
     .number {
         font-family: $font_renogare;
         font-size: 3rem;
+        color: $color_primary;
         p {
             margin-bottom: 0;
         }
@@ -41,7 +49,7 @@
             display: block;
             width: 30px;
             height: 2px;
-            background-color: #fff;
+            background-color: $color_primary;
         }
     }
     .number-title {
@@ -129,9 +137,9 @@
             &::after {
                 content:'';
                 display: block;
-                width: calc(100% - 2px);
+                width: 100%;
                 height: 1px;
-                background-color: #444444;
+                background-color: #4e41a0;
             }
             &:last-child::after {
                 display: none;
@@ -142,8 +150,13 @@
 }
 
 @include maxwidth(sm) {
-    .skill-about .wrap-skill .row-skill .box-skill {
-        width: 50%;
+    .skill-about .wrap-skill .row-skill {
+        &::after {
+            display: none;
+        }
+        .box-skill {
+            width: 50%;
+        }
     }
     .presentation-about .detail-presentation h2, 
     .presentation-about .detail-presentation h3, 

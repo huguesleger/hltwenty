@@ -102,3 +102,27 @@
         transform: scale(1.2);
     }
 }
+
+.anim-line {
+    &:before {
+      animation: scroll-line 1s ease-in-out infinite;
+      -webkit-animation: scroll-line 1s ease-in-out infinite;
+    }
+  }
+
+@keyframes scroll-line {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+  @-webkit-keyframes scroll-line {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }

@@ -28,20 +28,6 @@
     }
 }
 
-// hero single work
-// ==================
-.hero-case-study {
-    position: relative;
-    display: flex;
-    height: 100vh;
-    .hero-content {
-        width: 60%;
-    }
-    .hero-img {
-        width: 40%;
-        background-color: #fff;
-    }
-}
 
 @include maxwidth(sm) {
     .hero-page {

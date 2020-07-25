@@ -62,7 +62,7 @@
         <p>{{ item.post.terms('case-study-type')|join(', ') }}</p> #}
 
 
-    <div id="caseStudiesSlider" class="case-studies-slider reveal">
+    <div id="caseStudiesSlider" class="case-studies-slider reveal-slider">
     <div class="container wrap-studies-slider p-0">
     {% for i, item in bloc.items %}
         <div class="item-case-study {% if loop.first %}is-active{% endif %}">  
@@ -81,7 +81,7 @@
                             </div>
                             <div class="work-left" data-color="{{ item.couleur }}"></div>
                                 <div class="content-img">
-                                    <img class="img-work" src="{{ item.image }}" alt="" />
+                                    <img class="img-work" src="{{ item.image }}" alt="{{ item.post.post_title }}" />
                                 </div>
                         </div>
                     </div>
@@ -118,7 +118,7 @@
         {% for i, item in bloc.items %}
         {% set number = i + 1 %}
             {% if loop.first %}
-                <div class="bullet-number-first go-prev hoverable" data-cursor-text="prev">0{{number}}</div>
+                <div class="bullet-number-first">0{{number}}</div>
              {% endif %}
         {% endfor %}
             <div class="bullet-bar">
@@ -127,11 +127,10 @@
         {% for i, item in bloc.items %}
         {% set number = i + 1 %}
             {% if loop.last %}
-                <div class="bullet-number-last go-next hoverable" data-cursor-text="next">0{{number}}</div>
+                <div class="bullet-number-last">0{{number}}</div>
             {% endif %}
          {% endfor %}    
         </div>
-
     </div>
     </div>
 

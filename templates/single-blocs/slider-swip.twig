@@ -12,8 +12,9 @@
   <div class="container p-0">
     <div class="swiper-container hoverable" data-cursor-text="swip">
       <div class="swiper-wrapper">
-        {% for swip_image in bloc.swip_images %}
-        <div class="swiper-slide"><img src="{{ swip_image.image }}" alt=""></div>
+        {% for i, swip_image in bloc.swip_images %}
+        {% set i = i + 1  %}
+        <div class="swiper-slide"><img src="{{ swip_image.image }}" alt="{{ bloc.alt }}"></div>
         {% endfor %}
       </div>
     </div>

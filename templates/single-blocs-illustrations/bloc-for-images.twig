@@ -11,12 +11,13 @@
     <div class="half-line after-lines"></div>
     <div class="container">
     <div class="row">
-        {% for inline_image in bloc.inline_images %}
+        {% for i, inline_image in bloc.inline_images %}
+        {% set i = i + 1  %}
         <div class="col-md-3">
             <a class="illu-popup hoverable" href="{{ inline_image.image }}">
                 <div class="hover-illu-popup"></div>
                 <div class="hover-icon"><span class="icon-zoom"></span></div>
-                <img class="img-fluid" src="{{ inline_image.image }}" alt="" />
+                <img class="img-fluid" src="{{ inline_image.image }}" alt="{{ bloc.alt }}" />
             </a>
         </div>
         {% endfor %}

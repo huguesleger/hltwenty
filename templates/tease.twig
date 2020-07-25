@@ -13,7 +13,7 @@
 		<div class="work-item">
 		<div class="work-color"></div>
 			{% if post.get_thumbnail %}
-				<img class="img-fluid" src="{{post.thumbnail.src}}" />
+				<img class="img-fluid" src="{{post.thumbnail.src}}" alt="{{post.title}}" />
 			{% endif %}
 		<div class="work-desc">
 		<h3>{{post.title}}</h3>

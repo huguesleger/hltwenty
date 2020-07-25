@@ -23,7 +23,7 @@
     }
     .liner {
         height: 100vh;
-        border-left: 1px solid #444444;
+        border-left: 1px solid #4e41a0;
         background: #fff;
         overflow: hidden;
         .block-line {
@@ -72,14 +72,14 @@
 
 .after-lines {
     right: 0;
-    border-left: 1px solid #444444;
+    border-left: 1px solid #4e41a0;
     .block-line {
         right: 0;
     }    
 }
 
 @include maxwidth(sm) {
-    .sections, .footer, .section, .section-color, .section-dark, .case-study{
+    .sections, .footer, .section, .section-color, .section-dark, .section-color-dark, .case-study{
         .before-lines, .after-lines, .wrap-lines {
             display: none;
         }

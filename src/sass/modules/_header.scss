@@ -5,7 +5,7 @@
     min-height: 60px;
     left:0;
     right: 0;
-    z-index: 2;
+    z-index: 3;
     &.is-open {
         mix-blend-mode: inherit;
     }
@@ -129,5 +129,10 @@
   @include maxwidth(sm) {
    .logo .title-site {
        display: none;
-   }   
+   }
+   .header {
+    .content-header {
+        padding: 2rem 2rem 1rem;
+    }
+}   
   }
