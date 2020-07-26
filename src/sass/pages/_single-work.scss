@@ -136,7 +136,6 @@
 // Branding
 // ==================
 .branding-case-study {
-    // background-color: #f1f1f1;
     overflow: hidden;
     padding: 8rem 0;
     .row {
@@ -277,7 +276,7 @@
   }
 .swiper-pagination-bullet-active {
 opacity: 1;
-background: #007aff;
+background: $color_primary;
 }
 .swiper-pagination-bullets .swiper-pagination-bullet {
 margin: 0 5px;

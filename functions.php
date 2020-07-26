@@ -253,7 +253,6 @@ class StarterSite extends Timber\Site {
 			if( 0 === strpos( $value, 'postid-' )) unset($classes[$key]);
 			if ( $value == 'case-study-template-default') unset( $classes[ $key ] );
 			if ( $value == 'single') unset( $classes[ $key ] );
-			// if ( $value == 'single-case-study') unset( $classes[ $key ] );
 		}
 		return $classes;
 	}

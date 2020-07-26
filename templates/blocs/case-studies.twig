@@ -1,6 +1,16 @@
 {# {{ dump(item) }}      #}
-{# <div class="section">
-    <div class="container">
+<section class="section section-slider-work">
+    <div class="half-line before-lines"></div>
+    <div class="wrap-lines container">
+        <div class="row no-gutters">
+            <div class="col-3 liner"></div>
+            <div class="col-3 liner"></div>
+            <div class="col-3 liner"></div>
+            <div class="col-3 liner"></div>
+        </div>
+    </div>
+    <div class="half-line after-lines"></div>
+    <div class="container reveal">
         <div class="row">
             <div class="col-md-12 p-0">
                 <div class="section-infos">
@@ -10,129 +20,66 @@
             </div>
         </div>
     </div>
-</div>  #}
-
-<section class="section section-slider-work">
-<div class="half-line before-lines"></div>
-<div class="wrap-lines container">
-    <div class="row no-gutters">
-        <div class="col-3 liner"></div>
-        <div class="col-3 liner"></div>
-        <div class="col-3 liner"></div>
-        <div class="col-3 liner"></div>
-    </div>
-</div>
-<div class="half-line after-lines"></div>
-<div class="container reveal">
-    <div class="row">
-        <div class="col-md-12 p-0">
-            <div class="section-infos">
-                <h3 class="section-title mb-5">{{ bloc.titre }}</h3>
-                <p class="section-desc">{{ bloc.description }}</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-{# {% for item in bloc.items %} #}
-{# {{ dump(item.post.terms('case-study-type')) }}      #}
-    {# <p>{{ item.post.post_title }}</p> #}
-{# <div class="container">
-    <div class="row">
-        <div id="caseSudiesSlider" class="case-studies-slider">
-            <div class="item-case-study">
-                <div class="wrap-work">
-                    <a class="hoverable" data-cursor-text="view" href="{{ item.post.link }}">
-                    <div class="hoverlay-work">
-                        <div class="work-left" data-color="{{ item.couleur }}">
-                            <div class="content-img">
-                                <img class="img-work" src="{{ item.image }}" alt="" />
-                            </div>
-                        </div>
-                    </div>
-                    </a>
-                </div>
-            </div>
-            <div class="studies-slide-navigation"></div>
-        </div>
-    </div>
-</div> #}
-        {# <p>{{ item.post.post_excerpt }}</p>
-        <p>{{ item.post.terms('case-study-type')|join(', ') }}</p> #}
-
 
     <div id="caseStudiesSlider" class="case-studies-slider reveal-slider">
-    <div class="container wrap-studies-slider p-0">
-    {% for i, item in bloc.items %}
-        <div class="item-case-study {% if loop.first %}is-active{% endif %}">  
-            <div class="container">
-                <div class="row no-gutters">
-                    <div class="col-md-6">
-                        <div class="hoverlay-work">
-                            <div class="wrap-elements">
-                                <span class="element element-1 c"></span>
-                                <span class="element element-3 c-line"></span>
-                                <span class="element element-5 t"></span>
-                                <span class="element element-8 r-line anim-pulse"></span>
-                                <span class="element element-9 l anim-slide-x"></span>
-                                <span class="element element-11 more"></span>
-                                <span class="element element-12 x"></span>
-                            </div>
-                            <div class="work-left" data-color="{{ item.couleur }}"></div>
+        <div class="container wrap-studies-slider p-0">
+            {% for i, item in bloc.items %}
+            <div class="item-case-study {% if loop.first %}is-active{% endif %}">
+                <div class="container">
+                    <div class="row no-gutters">
+                        <div class="col-md-6">
+                            <div class="hoverlay-work">
+                                <div class="wrap-elements">
+                                    <span class="element element-1 c"></span>
+                                    <span class="element element-3 c-line"></span>
+                                    <span class="element element-5 t"></span>
+                                    <span class="element element-8 r-line anim-pulse"></span>
+                                    <span class="element element-9 l anim-slide-x"></span>
+                                    <span class="element element-11 more"></span>
+                                    <span class="element element-12 x"></span>
+                                </div>
+                                <div class="work-left" data-color="{{ item.couleur }}"></div>
                                 <div class="content-img">
                                     <img class="img-work" src="{{ item.image }}" alt="{{ item.post.post_title }}" />
                                 </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 offset-lg-3 col-md-5 offset-md-1">
-                        <div class="case-study-txt {% if loop.first %}is-active{% endif %}">
-                            <div class="case-study-title">                       
-                                <div><a class="hoverable" data-cursor-text="view"
-                                        href="{{ item.post.link }}">{{ item.post.post_title }}</a>
+                        <div class="col-lg-3 offset-lg-3 col-md-5 offset-md-1">
+                            <div class="case-study-txt {% if loop.first %}is-active{% endif %}">
+                                <div class="case-study-title">
+                                    <div><a class="hoverable" data-cursor-text="view"
+                                            href="{{ item.post.link }}">{{ item.post.post_title }}</a>
+                                    </div>
+                                </div>
+                                <div class="case-study-desc">
+                                    <div class="case-study-excerpt">{{ item.post.post_excerpt| truncate(8) }}</div>
+                                    <div class="case-study-link"><a class="hoverable" data-cursor-text="view"
+                                            href="{{ item.post.link }}">View Case
+                                            <span></span></a></div>
                                 </div>
                             </div>
-                            <div class="case-study-desc">
-                                <div class="case-study-excerpt">{{ item.post.post_excerpt| truncate(8) }}</div>
-                                <div class="case-study-link"><a class="hoverable"
-                                        data-cursor-text="view" href="{{ item.post.link }}">View Case
-                                        <span></span></a></div>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        {% endfor %}
-        {# <div class="case-study-bullets">
-            {% for i, item in bloc.items %}
-                {% set number = i + 1 %}
-                <div class="study-bullet {% if loop.first %}is-active{% endif %}">
-                <span class="bullet-number">0{{number}}</span>
-                <span class="bullet-line"></span>
-                </div>
             {% endfor %}
-        </div> #}
-
-        <div class="case-study-bullets">
-        {% for i, item in bloc.items %}
-        {% set number = i + 1 %}
-            {% if loop.first %}
+            <div class="case-study-bullets">
+                {% for i, item in bloc.items %}
+                {% set number = i + 1 %}
+                {% if loop.first %}
                 <div class="bullet-number-first">0{{number}}</div>
-             {% endif %}
-        {% endfor %}
-            <div class="bullet-bar">
-                <div class="bar-line"></div>
-            </div>
-        {% for i, item in bloc.items %}
-        {% set number = i + 1 %}
-            {% if loop.last %}
+                {% endif %}
+                {% endfor %}
+                <div class="bullet-bar">
+                    <div class="bar-line"></div>
+                </div>
+                {% for i, item in bloc.items %}
+                {% set number = i + 1 %}
+                {% if loop.last %}
                 <div class="bullet-number-last">0{{number}}</div>
-            {% endif %}
-         {% endfor %}    
+                {% endif %}
+                {% endfor %}
+            </div>
         </div>
     </div>
-    </div>
-
-
 </section>
