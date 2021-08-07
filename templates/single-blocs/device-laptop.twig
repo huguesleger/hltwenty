@@ -24,9 +24,11 @@
                 <div class="device-laptop-img">
                     <img class="img-fluid" src="{{ bloc.image }}" alt="{{ bloc.alt }}">
                 </div>
+                {% if bloc.site_web == true %}
                 <div class="text-center my-3">
                     <a class="btn btn-round btn-primary btn-effect hoverable mt-3" href="{{ bloc.site_web }}" target="_blank" rel="noopener noreferrer">Voir le site</a> 
                 </div>
+                {% endif %}
             </div>
         </div>
     </div>

@@ -30,7 +30,7 @@ for (var i = 0; i < hoverables.length; i++) {
 for (var i = 0; i < hoverablesSmall.length; i++) {
     hoverablesSmall[i].addEventListener('mouseenter', onMouseHoverSmall);
     hoverablesSmall[i].addEventListener('mouseleave', onMouseHoverOutSmall);
-  }
+}
 
 // Move the cursor
 function onMouseMove(e) {
